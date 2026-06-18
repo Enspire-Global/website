@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Enspire Global</title>
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Enspire Global">
+<meta property="og:description" content="Get in touch with Enspire Global — request marriage coaching, invite Billy and Rebecca to speak, connect with Blindspot Media, or simply say hello.">
+<meta property="og:url" content="https://enspireglobal.org/contact.html">
+<meta property="og:site_name" content="Enspire Global">
+<meta property="og:image" content="https://enspireglobal.org/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Enspire Global">
+<meta name="twitter:description" content="Get in touch with Enspire Global — request marriage coaching, invite Billy and Rebecca to speak, connect with Blindspot Media, or simply say hello.">
+<meta name="description" content="Get in touch with Enspire Global — request marriage coaching, invite Billy and Rebecca to speak at your church, or connect with Blindspot Media for video and photography.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+ <div class="nav-inner">
+  <a href="index.html" class="nav-logo" aria-label="Enspire Global Home">
+   <img src="images/logos/enspire-global-color.png" alt="Enspire Global">
+  </a>
+  <ul class="nav-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="what-we-do.html">What We Do</a></li>
+      <li><a href="missions.html">Missions</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="give.html">Give</a></li>
+      <li><a href="updates.html">Ministry Updates</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+<a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" class="btn btn-give nav-cta" target="_blank" rel="noopener">Give Now</a>
+  <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',document.getElementById('mn').classList.toggle('open'))">
+   <span></span><span></span><span></span>
+  </button>
+ </div>
+</nav>
+<div class="mob-nav" id="mn" aria-label="Mobile navigation">
+ <ul>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="what-we-do.html">What We Do</a></li>
+    <li><a href="missions.html">Missions</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="give.html">Give</a></li>
+    <li><a href="updates.html">Ministry Updates</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+ <div class="mob-cta">
+    <a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" class="btn btn-give" target="_blank" rel="noopener">Give Now</a>
+    <a href="contact.html" class="btn btn-outline-blue">Contact Us</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Contact hero">
+ <div class="page-hero-inner">
+  <p class="eyebrow">Get in Touch</p>
+  <h1>We'd love to<br>hear from you.</h1>
+  <p>Whether you're a couple looking for help, a church wanting a ministry partner, or someone who wants to connect — reach out. We read every message.</p>
+ </div>
+</section>
+
+<!-- CONTACT FORM + INFO -->
+<section class="contact-section" aria-labelledby="contact-h">
+ <div class="contact-inner">
+
+  <!-- FORM -->
+  <div class="contact-form-wrap"><form id="contact-form" onsubmit="handleFormSubmit(this,'contact-success');return false;">
+   <h2 id="contact-h">Send us a message.</h2>
+   <p class="form-intro">Fill out the form below and we'll be in touch soon.</p>
+   <div class="ff-row">
+    <div class="ff">
+     <label for="c-fname">First Name</label>
+     <input type="text" id="c-fname" name="first_name" required placeholder="First name" autocomplete="given-name">
+    </div>
+    <div class="ff">
+     <label for="c-lname">Last Name</label>
+     <input type="text" id="c-lname" name="last_name" required placeholder="Last name" autocomplete="family-name">
+    </div>
+   </div>
+   <div class="ff">
+    <label for="c-email">Email Address</label>
+    <input type="email" id="c-email" name="email" required placeholder="you@example.com" autocomplete="email">
+   </div>
+   <div class="ff">
+    <label for="c-subject">Reason for Reaching Out</label>
+    <select id="c-subject" name="reason">
+     <option value="" disabled selected>Select a reason</option>
+     <option>Marriage Coaching Inquiry</option>
+     <option>Invite Us to Speak / Marriage Event</option>
+     <option>Invite Blindspot Media</option>
+     <option>International Ministry Partnership</option>
+     <option>General Question</option>
+     <option>Prayer Request</option>
+     <option>Other</option>
+    </select>
+   </div>
+   <div class="ff">
+    <label for="c-msg">Your Message</label>
+    <textarea id="c-msg" name="message" placeholder="Tell us a little about what's on your heart or what you're looking for..."></textarea>
+   </div>
+   <input type="hidden" name="access_key" value="a4b05129-373e-4f40-a38e-bf7459378109">
+    <input type="hidden" name="subject" value="Contact Form - Enspire Global">
+    <input type="hidden" name="from_name" value="Enspire Global Website">
+    <input type="checkbox" name="botcheck" style="display:none"><button type="submit" class="btn btn-primary form-submit">Send Message</button>
+   <p class="form-privacy">We respect your privacy and will never share your information.</p>
+  </form>
+  <div id="contact-success" class="form-success" style="display:none;padding:24px;background:#e8f4fb;border-radius:8px;margin-top:16px;text-align:center;color:#1A2B3C;"><strong>Thank you! We received your message and will be in touch soon.</strong></div>
+  </div>
+
+  <!-- INFO SIDEBAR -->
+  <div class="contact-info">
+   <span class="eyebrow">Contact Information</span>
+   <h2>Let's start a conversation.</h2>
+   <p>No question is too small and no situation is too big. Whether you need encouragement, have a ministry partnership idea, or just want to say hello — we want to hear from you.</p>
+
+   <div class="info-block">
+    <div class="info-block-icon">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#0E8BC4" stroke-width="1.8" stroke-linecap="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+     </svg>
+    </div>
+    <h4>Email</h4>
+    <p><a href="mailto:info@enspireglobal.org">info@enspireglobal.org</a></p>
+   </div>
+
+   <div class="info-block">
+    <div class="info-block-icon">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#0E8BC4" stroke-width="1.8" stroke-linecap="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+     </svg>
+    </div>
+    <h4>Based In</h4>
+    <p>Little Rock, Arkansas<br>Serving nationally &amp; globally</p>
+   </div>
+
+   <div class="info-block">
+    <div class="info-block-icon">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#0E8BC4" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+     </svg>
+    </div>
+    <h4>Getting Back to You</h4>
+    <p>We'll be in touch soon. For urgent needs, email us directly at <a href="mailto:info@enspireglobal.org">info@enspireglobal.org</a>.</p>
+   </div>
+
+   <div class="response-box">
+    <h4>Not sure what to say?</h4>
+    <p>That's okay. Even a simple "I'd love to connect" is a great place to start. We'll take it from there.</p>
+   </div>
+  </div>
+
+ </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="quick-links" aria-labelledby="ql-h">
+ <div class="quick-links-inner">
+  <div class="quick-links-header">
+   <span class="eyebrow">Looking for Something Specific?</span>
+   <h2 id="ql-h">We can help with that.</h2>
+   <p>Jump directly to the area most relevant to you.</p>
+  </div>
+  <div class="quick-grid">
+   <div class="quick-card">
+    <div class="quick-card-icon" style="background:var(--blue-light)">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#0E8BC4" stroke-width="1.8" stroke-linecap="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+     </svg>
+    </div>
+    <h4>Marriage Coaching</h4>
+    <p>Ready to invest in your marriage? We'd love to walk alongside you — in person or virtually.</p>
+    <a href="what-we-do.html#coaching">Request Coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+   </div>
+   <div class="quick-card">
+    <div class="quick-card-icon" style="background:rgba(171,206,48,.12)">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#8aaa20" stroke-width="1.8" stroke-linecap="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+     </svg>
+    </div>
+    <h4>Church Partnership</h4>
+    <p>Want to bring a marriage event to your church? We partner with churches of all sizes.</p>
+    <a href="what-we-do.html#marriage-events">Invite Us to Speak <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+   </div>
+   <div class="quick-card">
+    <div class="quick-card-icon" style="background:rgba(253,141,4,.1)">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#FD8D04" stroke-width="1.8" stroke-linecap="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+     </svg>
+    </div>
+    <h4>Support the Ministry</h4>
+    <p>Your giving makes everything we do possible — coaching, events, missions, and free resources.</p>
+    <a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" target="_blank" rel="noopener">Give a Gift <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- GIVE CTA -->
+<section class="contact-cta" aria-labelledby="cta-h">
+ <div class="contact-cta-inner">
+  <span class="eyebrow">Partner With Us</span>
+  <h2 id="cta-h">There's more than one way to be part of this.</h2>
+  <p>Pray for us. Share our resources. Invite us to your church. Give toward a missions trip. Every one of these things matters — and we are grateful for every person who chooses to walk alongside us.</p>
+  <div class="contact-cta-actions">
+   <a href="give.html" class="btn btn-give">Give a Gift</a>
+   <a href="updates.html" class="btn btn-outline">Receive Ministry Updates</a>
+  </div>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+ <div class="footer-in">
+  <div class="footer-top">
+   <div class="fbrand">
+    <img src="images/logos/enspire-global-white.png" alt="Enspire Global">
+    <p>Equipping, encouraging, and empowering marriages and families to build healthy, growing, love-filled relationships — rooted in faith.</p>
+   </div>
+   <div class="footer-col">
+    <h4>Ministry</h4>
+    <ul>
+     <li><a href="what-we-do.html">What We Do</a></li>
+     <li><a href="what-we-do.html#coaching">Marriage Coaching</a></li>
+     <li><a href="what-we-do.html#events">Marriage Events</a></li>
+     <li><a href="what-we-do.html#elevate">Elevate Men's Ministry</a></li>
+     <li><a href="what-we-do.html#womens">Women's Discipleship</a></li>
+     <li><a href="missions.html">Missions</a></li>
+    </ul>
+   </div>
+   <div class="footer-col">
+    <h4>Connect</h4>
+    <ul>
+     <li><a href="about.html">Our Story</a></li>
+     <li><a href="resources.html">Resources</a></li>
+     <li><a href="give.html">Give</a></li>
+     <li><a href="updates.html">Ministry Updates</a></li>
+     <li><a href="contact.html">Contact Us</a></li>
+     <li><a href="https://www.blindspot.media" target="_blank" rel="noopener">Blindspot Media</a></li>
+    </ul>
+   </div>
+   <div class="footer-col fcontact">
+    <h4>Contact</h4>
+    <p>Little Rock, Arkansas</p>
+    <p>Serving nationally &amp; globally</p>
+    <p style="margin-top:8px"><a href="mailto:info@enspireglobal.org">info@enspireglobal.org</a></p>
+   </div>
+  </div>
+  <div class="footer-btm" style="align-items:center;">
+   <p>© 2026 Enspire Global. All rights reserved.</p>
+   <a href="privacy.html">Privacy Policy</a>
+   <img src="images/logos/gsn-white.png" alt="Powered by Global Service Network" style="max-height:28px;width:auto;display:block;opacity:0.55;">
+  </div>
+ </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

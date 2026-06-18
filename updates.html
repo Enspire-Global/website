@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ministry Updates — Enspire Global</title>
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ministry Updates — Enspire Global">
+<meta property="og:description" content="Read and download ministry updates from Billy and Rebecca Altman of Enspire Global — stories from the field, prayer requests, and ways to get involved.">
+<meta property="og:url" content="https://enspireglobal.org/updates.html">
+<meta property="og:site_name" content="Enspire Global">
+<meta property="og:image" content="https://enspireglobal.org/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ministry Updates — Enspire Global">
+<meta name="twitter:description" content="Read and download ministry updates from Billy and Rebecca Altman of Enspire Global — stories from the field, prayer requests, and ways to get involved.">
+<meta name="description" content="Read and download ministry updates from Billy and Rebecca Altman of Enspire Global — stories from the field, prayer requests, and ways to partner with the ministry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+ <div class="nav-inner">
+  <a href="index.html" class="nav-logo" aria-label="Enspire Global Home">
+   <img src="images/logos/enspire-global-color.png" alt="Enspire Global">
+  </a>
+  <ul class="nav-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="what-we-do.html">What We Do</a></li>
+      <li><a href="missions.html">Missions</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="give.html">Give</a></li>
+      <li><a href="updates.html" class="active">Ministry Updates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+<a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" class="btn btn-give nav-cta" target="_blank" rel="noopener">Give Now</a>
+  <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',document.getElementById('mn').classList.toggle('open'))">
+   <span></span><span></span><span></span>
+  </button>
+ </div>
+</nav>
+<div class="mob-nav" id="mn" aria-label="Mobile navigation">
+ <ul>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="what-we-do.html">What We Do</a></li>
+    <li><a href="missions.html">Missions</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="give.html">Give</a></li>
+    <li><a href="updates.html" class="active">Ministry Updates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+ <div class="mob-cta">
+    <a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" class="btn btn-give" target="_blank" rel="noopener">Give Now</a>
+    <a href="contact.html" class="btn btn-outline-blue">Contact Us</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Ministry Updates hero">
+ <div class="page-hero-inner">
+  <p class="eyebrow">Ministry Updates</p>
+  <h1>Stories from the field.<br>From our family to yours.</h1>
+  <p>Billy and Rebecca send regular updates sharing what God is doing through Enspire Global — stories of changed lives, answered prayers, and what's ahead.</p>
+ </div>
+</section>
+
+<!-- SIGNUP — PRIMARY FOCUS -->
+<section class="signup-section" id="signup" aria-labelledby="signup-h">
+ <div class="signup-section-inner">
+  <div class="signup-text">
+   <span class="eyebrow">Stay Connected</span>
+   <h2 id="signup-h">Join us in prayer.<br>Walk with us in ministry.</h2>
+   <p>The best way to stay connected with Enspire Global is to receive our ministry updates directly in your inbox. Each update is a personal letter from Billy and Rebecca — not a generic newsletter.</p>
+   <p>Sign up and become part of the story God is writing through this ministry.</p>
+   <ul class="expect-list">
+    <li><span class="expect-dot"></span>Stories of couples, men, and families whose lives are being changed</li>
+    <li><span class="expect-dot"></span>Updates from the field — local ministry and international missions</li>
+    <li><span class="expect-dot"></span>Specific prayer requests so you can pray with purpose</li>
+    <li><span class="expect-dot"></span>What's coming next — events, trips, and partnership opportunities</li>
+   </ul>
+  </div>
+  <div class="signup-form-card"><form id="signup-form" onsubmit="handleFormSubmit(this,'signup-success');return false;"><input type="hidden" name="access_key" value="a4b05129-373e-4f40-a38e-bf7459378109"><input type="checkbox" name="botcheck" style="display:none"><input type="hidden" name="subject" value="Ministry Updates Signup">
+   <h3>Receive Ministry Updates</h3>
+   <p class="form-sub">Sign up to receive Billy and Rebecca's updates directly in your inbox.</p>
+   <div class="ff">
+    <label for="s-fname">First Name</label>
+    <input type="text" id="s-fname" name="first_name" required placeholder="Your first name" autocomplete="given-name">
+   </div>
+   <div class="ff">
+    <label for="s-lname">Last Name</label>
+    <input type="text" id="s-lname" name="last_name" required placeholder="Your last name" autocomplete="family-name">
+   </div>
+   <div class="ff">
+    <label for="s-email">Email Address</label>
+    <input type="email" id="s-email" name="email" required placeholder="you@example.com" autocomplete="email">
+   </div>
+   <button type="submit" class="btn btn-primary form-submit">Sign Me Up</button>
+   <p class="form-privacy">We respect your privacy. No spam — ever. Unsubscribe anytime.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ARCHIVE -->
+<section class="archive-section" id="archive" aria-labelledby="archive-h">
+ <div class="container">
+  <div class="archive-header">
+   <span class="eyebrow">Past Updates</span>
+   <h2 id="archive-h">Catch up on what you've missed.</h2>
+   <p>Browse and download past ministry updates from Billy and Rebecca below.</p>
+  </div>
+  <div class="archive-list">
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-spring-2026.jpg" alt="Spring 2026 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <!-- Spring 2026 -->
+   <!-- Year End 2025 -->
+   <!-- Summer 2025 -->
+   <!-- Spring 2025 -->
+   <!-- Year End 2024 -->
+   <!-- Summer 2024 -->
+   <!-- Spring 2024 -->
+   <span class="archive-badge" style="background:var(--green);color:var(--dark)">Spring 2026</span>
+     <p class="archive-title">Spring 2026 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Spring_2026_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-year-end-2025.jpg" alt="Year End 2025 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <span class="archive-badge" style="background:var(--orange);color:var(--white)">Year End 2025</span>
+     <p class="archive-title">Year End 2025 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Year_End_2025_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-summer-2025.jpg" alt="Summer 2025 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <span class="archive-badge" style="background:var(--blue);color:var(--white)">Summer 2025</span>
+     <p class="archive-title">Summer 2025 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Summer_2025_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-spring-2025.jpg" alt="Spring 2025 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <span class="archive-badge" style="background:var(--green);color:var(--dark)">Spring 2025</span>
+     <p class="archive-title">Spring 2025 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Spring_2025_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-year-end-2024.jpg" alt="Year End 2024 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <span class="archive-badge" style="background:var(--orange);color:var(--white)">Year End 2024</span>
+     <p class="archive-title">Year End 2024 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Year_End_2024_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-summer-2024.jpg" alt="Summer 2024 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <span class="archive-badge" style="background:var(--blue);color:var(--white)">Summer 2024</span>
+     <p class="archive-title">Summer 2024 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Summer_2024_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+   <div class="archive-item">
+    <div class="archive-thumb">
+     <img src="images/photos/letter-spring-2024.jpg" alt="Spring 2024 Ministry Update">
+    </div>
+    <div class="archive-info">
+     <span class="archive-badge" style="background:var(--green);color:var(--dark)">Spring 2024</span>
+     <p class="archive-title">Spring 2024 Ministry Update</p>
+     <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
+    </div>
+    <a href="downloads/Spring_2024_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+     Download
+    </a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="updates-cta" aria-labelledby="ucta-h">
+ <div class="updates-cta-inner">
+  <span class="eyebrow">Partner With Us</span>
+  <h2 id="ucta-h">Your prayers and giving make this possible.</h2>
+  <p>Every story in these updates exists because people chose to pray and give. If these stories have moved you — consider joining us as a financial partner.</p>
+  <div class="updates-cta-actions">
+   <a href="give.html" class="btn btn-give">Give a Gift</a>
+   <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+  </div>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Site footer">
+ <div class="footer-in">
+  <div class="footer-top">
+   <div class="fbrand">
+    <img src="images/logos/enspire-global-white.png" alt="Enspire Global">
+    <p>Equipping, encouraging, and empowering marriages and families to build healthy, growing, love-filled relationships — rooted in faith.</p>
+   </div>
+   <div class="footer-col">
+    <h4>Ministry</h4>
+    <ul>
+     <li><a href="what-we-do.html">What We Do</a></li>
+     <li><a href="what-we-do.html#coaching">Marriage Coaching</a></li>
+     <li><a href="what-we-do.html#events">Marriage Events</a></li>
+     <li><a href="what-we-do.html#elevate">Elevate Men's Ministry</a></li>
+     <li><a href="what-we-do.html#womens">Women's Discipleship</a></li>
+     <li><a href="missions.html">Missions</a></li>
+    </ul>
+   </div>
+   <div class="footer-col">
+    <h4>Connect</h4>
+    <ul>
+     <li><a href="about.html">Our Story</a></li>
+     <li><a href="resources.html">Resources</a></li>
+     <li><a href="give.html">Give</a></li>
+     <li><a href="updates.html">Ministry Updates</a></li>
+     <li><a href="contact.html">Contact Us</a></li>
+     <li><a href="https://www.blindspot.media" target="_blank" rel="noopener">Blindspot Media</a></li>
+    </ul>
+   </div>
+   <div class="footer-col fcontact">
+    <h4>Contact</h4>
+    <p>Little Rock, Arkansas</p>
+    <p>Serving nationally &amp; globally</p>
+    <p style="margin-top:8px"><a href="mailto:info@enspireglobal.org">info@enspireglobal.org</a></p>
+   </div>
+  </div>
+  <div class="footer-btm" style="align-items:center;">
+   <p>© 2026 Enspire Global. All rights reserved.</p>
+   <a href="privacy.html">Privacy Policy</a>
+   <img src="images/logos/gsn-white.png" alt="Powered by Global Service Network" style="max-height:28px;width:auto;display:block;opacity:0.55;">
+  </div>
+ </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
