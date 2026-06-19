@@ -283,7 +283,8 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <h2 id="contact-h">Send us a message.</h2>
    <p class="form-intro">Fill out the form below and we'll be in touch soon.</p>
    <div class="ff-row">
-    <div class="ff">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+   <div class="ff">
      <label for="c-fname">First Name</label>
      <input type="text" id="c-fname" placeholder="First name" autocomplete="given-name">
     </div>
@@ -498,8 +499,8 @@ document.querySelector('.form-submit').addEventListener('click', function() {
       name: fname + ' ' + lname,
       email: email,
       reason: subject,
-      message: msg
-    })
+      message: msg,
+      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Message sent!</strong><br>Thank you for reaching out. We\'ll be in touch soon.');
     else { btn.textContent='Send Message'; btn.disabled=false; alert('Something went wrong. Please try again or email info@enspireglobal.org.'); }

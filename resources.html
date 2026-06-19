@@ -559,7 +559,7 @@ function validateForm(nameId, emailId) {
  if (!email || !email.includes('@')) { alert('Please enter a valid email address to download this resource.'); return false; }
  fetch('https://api.web3forms.com/submit', {
    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-   body: JSON.stringify({access_key:'a4b05129-373e-4f40-a38e-bf7459378109', name: name, email: email, subject: 'Resource Download — Enspire Global'})
+   body: JSON.stringify({botcheck: false, access_key:'a4b05129-373e-4f40-a38e-bf7459378109', name: name, email: email, subject: 'Resource Download — Enspire Global'})
  }).catch(function(){});
  return true;
 }

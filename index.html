@@ -519,6 +519,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   <div class="signup">
    <h3>Receive Ministry Updates</h3>
    <p class="form-sub">Get our quarterly prayer letters and ministry news delivered to your inbox.</p>
+   <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
    <div class="ff">
     <label for="fn">First Name</label>
     <input type="text" id="fn" name="fn" placeholder="Your first name" autocomplete="given-name">
@@ -604,8 +605,8 @@ document.querySelector('.fsub').addEventListener('click', function() {
       access_key: 'a4b05129-373e-4f40-a38e-bf7459378109',
       subject: 'Newsletter Signup — Enspire Global',
       name: (fname + ' ' + lname).trim(),
-      email: email
-    })
+      email: email,
+      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) { btn.textContent = "You're signed up!"; }
     else { btn.textContent='Sign Me Up'; btn.disabled=false; alert("Something went wrong. Please try again."); }

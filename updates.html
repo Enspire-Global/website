@@ -280,6 +280,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   <div class="signup-form-card">
    <h3>Receive Ministry Updates</h3>
    <p class="form-sub">Sign up to receive Billy and Rebecca's updates directly in your inbox.</p>
+   <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
    <div class="ff">
     <label for="s-fname">First Name</label>
     <input type="text" id="s-fname" placeholder="Your first name" autocomplete="given-name">
@@ -494,8 +495,8 @@ document.querySelector('.form-submit').addEventListener('click', function() {
       access_key: 'a4b05129-373e-4f40-a38e-bf7459378109',
       subject: 'Enspire Global Newsletter Signup',
       name: fname + ' ' + lname,
-      email: email
-    })
+      email: email,
+      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>You\'re signed up!</strong><br>Thank you, ' + fname + '. We\'ll be in touch with ministry updates.');
     else { btn.textContent='Sign Me Up'; btn.disabled=false; alert('Something went wrong. Please try again.'); }

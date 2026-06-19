@@ -466,7 +466,8 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     <p class="form-card-eyebrow blue">For Churches</p>
     <h3>Invite Us to Your Church</h3>
     <p class="form-sub">Tell us about your church and the type of event you're planning. We'll be in touch shortly.</p>
-    <div class="ff"><label for="c-name">Your Name</label><input type="text" id="c-name" placeholder="First and last name" autocomplete="name"></div>
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+   <div class="ff"><label for="c-name">Your Name</label><input type="text" id="c-name" placeholder="First and last name" autocomplete="name"></div>
     <div class="ff"><label for="c-church">Church Name</label><input type="text" id="c-church" placeholder="Your church name"></div>
     <div class="ff"><label for="c-city">City &amp; State</label><input type="text" id="c-city" placeholder="City, State"></div>
     <div class="ff"><label for="c-email">Email Address</label><input type="email" id="c-email" placeholder="you@example.com" autocomplete="email"></div>
@@ -608,8 +609,8 @@ btns[0].addEventListener('click', function() {
       subject: 'Church Event Invitation Request — ' + church,
       name: name, email: email,
       church: church, city: city,
-      event_type: event_type, date_range: date
-    })
+      event_type: event_type, date_range: date,
+      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Request sent!</strong><br>Thank you, ' + name.split(' ')[0] + '. We\'ll follow up within 2-3 business days.');
     else { btn.textContent='Send Invitation Request'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
@@ -633,8 +634,8 @@ btns[1].addEventListener('click', function() {
       access_key: 'a4b05129-373e-4f40-a38e-bf7459378109',
       subject: 'Coaching Request — Enspire Global',
       name: name, email: email,
-      how_heard: hear, note: note
-    })
+      how_heard: hear, note: note,
+      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Request received!</strong><br>Thank you for reaching out. We\'ll be in touch soon.');
     else { btn.textContent='Request Coaching'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
