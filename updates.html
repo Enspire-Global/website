@@ -18,7 +18,201 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<style>
+:root{
+ --blue:#0E8BC4;--blue-dark:#0a6fa0;--blue-light:#e8f4fb;
+ --green:#ABCE30;--green-dark:#8aaa20;
+ --orange:#FD8D04;--orange-dark:#d97503;
+ --dark:#1A2B3C;--gray:#6B7A8D;--gray-light:#f0f4f8;
+ --off-white:#F7F9FA;--white:#ffffff;
+ --font-d:'Playfair Display',Georgia,serif;
+ --font-b:'Inter',system-ui,sans-serif;
+ --max-w:1160px;--r:6px;--t:0.2s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);font-size:17px;line-height:1.7;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--font-b);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);display:block}
+h1{font-family:var(--font-d);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1.15}
+h2{font-family:var(--font-d);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:600;line-height:1.25}
+h3{font-family:var(--font-d);font-size:clamp(1.1rem,2vw,1.35rem);font-weight:600;line-height:1.3}
+p{margin-bottom:1rem}p:last-child{margin-bottom:0}
+
+.btn{display:inline-block;font-family:var(--font-b);font-size:15px;font-weight:600;letter-spacing:.03em;padding:14px 28px;border-radius:var(--r);cursor:pointer;transition:background var(--t),transform var(--t),box-shadow var(--t);text-align:center;border:none;line-height:1}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--blue);color:var(--white)}
+.btn-primary:hover{background:var(--blue-dark);box-shadow:0 4px 16px rgba(14,139,196,.3)}
+.btn-give{background:var(--orange);color:var(--white)}
+.btn-give:hover{background:var(--orange-dark);box-shadow:0 4px 16px rgba(253,141,4,.3)}
+.btn-green{background:var(--green);color:var(--dark);font-weight:700}
+.btn-green:hover{background:var(--green-dark);color:var(--white)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white)}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.btn-outline-blue{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+.btn-outline-blue:hover{background:var(--blue-light)}
+.btn-outline-dark{background:transparent;color:var(--dark);border:2px solid var(--dark)}
+.btn-outline-dark:hover{background:rgba(26,43,60,.06)}
+
+/* NAV */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(14,139,196,.1);box-shadow:0 2px 12px rgba(26,43,60,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.nav-logo img{height:44px;width:auto;display:block;background:transparent}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--dark);transition:color var(--t);position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform var(--t);transform-origin:left}
+.nav-links a:hover{color:var(--blue)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.active{color:var(--blue)}
+.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{margin-left:8px;padding:11px 20px;font-size:14px}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.nav-burger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px}
+.mob-nav{display:none;position:fixed;top:76px;left:0;right:0;background:var(--white);border-top:1px solid rgba(14,139,196,.1);padding:20px 24px 28px;z-index:99;box-shadow:0 8px 24px rgba(26,43,60,.1)}
+.mob-nav.open{display:block}
+.mob-nav ul{list-style:none}
+.mob-nav ul li{border-bottom:1px solid var(--gray-light)}
+.mob-nav ul li a{display:block;padding:13px 0;font-size:16px;font-weight:500;color:var(--dark)}
+.mob-cta{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+
+/* PAGE HERO */
+.page-hero{
+ margin-top:76px;
+ background:linear-gradient(105deg,rgba(10,111,160,.95) 0%,rgba(14,139,196,.85) 50%,rgba(26,43,60,.7) 100%),
+  url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=1600&q=80') center/cover no-repeat;
+ padding:88px 24px;position:relative;
+}
+.page-hero::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
+.page-hero-inner{max-width:var(--max-w);margin:0 auto;max-width:620px}
+.page-hero .eyebrow{color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.page-hero .eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green);flex-shrink:0}
+.page-hero h1{color:var(--white);margin-bottom:18px}
+.page-hero p{font-size:18px;color:rgba(255,255,255,.85);line-height:1.65;max-width:520px}
+
+/* SIGNUP SECTION — primary focus */
+.signup-section{padding:80px 24px;background:var(--white)}
+.signup-section-inner{
+ max-width:var(--max-w);margin:0 auto;
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:80px;align-items:center;
+}
+.signup-text .eyebrow{margin-bottom:12px}
+.signup-text h2{color:var(--dark);margin-bottom:16px}
+.signup-text p{color:var(--gray);font-size:16px;margin-bottom:16px}
+
+/* What to expect bullets */
+.expect-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.expect-list li{
+ display:flex;align-items:flex-start;gap:12px;
+ font-size:15px;color:var(--gray);
+}
+.expect-dot{
+ width:8px;height:8px;border-radius:50%;
+ background:var(--green);flex-shrink:0;margin-top:7px;
+}
+
+.signup-form-card{
+ background:var(--off-white);
+ border-radius:12px;
+ padding:44px 40px;
+ border:1px solid rgba(14,139,196,.1);
+ box-shadow:0 4px 24px rgba(26,43,60,.06);
+}
+.signup-form-card h3{color:var(--dark);margin-bottom:6px}
+.signup-form-card .form-sub{color:var(--gray);font-size:15px;margin-bottom:28px}
+.ff{margin-bottom:14px}
+.ff label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:5px;letter-spacing:.02em}
+.ff input{
+ width:100%;padding:12px 14px;
+ border:1.5px solid rgba(26,43,60,.14);
+ border-radius:var(--r);font-family:var(--font-b);
+ font-size:15px;color:var(--dark);background:var(--white);
+ transition:border-color .2s ease,box-shadow .2s ease;outline:none;
+}
+.ff input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(14,139,196,.1)}
+.ff input::placeholder{color:#aab4be}
+.form-submit{width:100%;margin-top:8px;font-size:15px;padding:14px}
+.form-privacy{font-size:12px;color:var(--gray);margin-top:10px;text-align:center}
+
+/* ARCHIVE */
+.archive-section{padding:72px 24px 96px;background:var(--off-white)}
+.archive-header{text-align:center;max-width:520px;margin:0 auto 48px}
+.archive-header .eyebrow{margin-bottom:12px}
+.archive-header h2{color:var(--dark);margin-bottom:12px}
+.archive-header p{color:var(--gray);font-size:15px}
+.archive-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+
+.archive-item{
+ background:var(--white);border-radius:10px;
+ padding:20px 24px;
+ display:flex;align-items:center;gap:20px;
+ box-shadow:0 2px 12px rgba(26,43,60,.05);
+ border:1px solid rgba(14,139,196,.08);
+ transition:box-shadow .2s ease,transform .2s ease;
+}
+.archive-item:hover{box-shadow:0 6px 20px rgba(26,43,60,.1);transform:translateY(-1px)}
+.archive-thumb{
+ width:60px;height:76px;border-radius:6px;
+ overflow:hidden;flex-shrink:0;
+}
+.archive-thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.archive-info{flex:1}
+.archive-badge{
+ display:inline-block;
+ font-size:10.5px;font-weight:700;letter-spacing:.09em;
+ text-transform:uppercase;padding:3px 10px;border-radius:100px;
+ margin-bottom:5px;
+}
+.archive-title{font-family:var(--font-d);font-size:1rem;font-weight:600;color:var(--dark);margin:0 0 2px}
+.archive-note{font-size:13.5px;color:var(--gray);margin:0}
+.archive-btn{
+ font-size:13.5px;padding:10px 18px;white-space:nowrap;
+ display:inline-flex;align-items:center;gap:7px;flex-shrink:0;
+}
+
+/* GIVE CTA */
+.updates-cta{padding:80px 24px;background:var(--blue)}
+.updates-cta-inner{max-width:640px;margin:0 auto;text-align:center}
+.updates-cta .eyebrow{color:var(--green);margin-bottom:12px}
+.updates-cta h2{color:var(--white);margin-bottom:16px}
+.updates-cta p{color:rgba(255,255,255,.78);font-size:17px;line-height:1.7}
+.updates-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+
+/* FOOTER */
+.footer{background:var(--dark);padding:68px 24px 32px}
+.footer-in{max-width:var(--max-w);margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.07)}
+.fbrand img{height:38px;width:auto;display:block;margin-bottom:18px;background:transparent}
+.fbrand p{color:rgba(255,255,255,.5);font-size:14.5px;line-height:1.7;margin-bottom:22px;max-width:260px}
+.footer-col h4{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:9px}
+.footer-col ul li a{color:rgba(255,255,255,.6);font-size:14px;transition:color .2s ease}
+.footer-col ul li a:hover{color:var(--white)}
+.fcontact p{color:rgba(255,255,255,.5);font-size:14px;margin-bottom:7px}
+.fcontact a{color:rgba(255,255,255,.7);transition:color .2s ease}
+.fcontact a:hover{color:var(--white)}
+.footer-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-btm p,.footer-btm a{color:rgba(255,255,255,.3);font-size:13px}
+.footer-btm a:hover{color:rgba(255,255,255,.65)}
+
+@media(max-width:1024px){
+ .signup-section-inner{grid-template-columns:1fr;gap:48px}
+ .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+ .nav-links,.nav-cta{display:none}
+ .nav-burger{display:flex}
+ .signup-form-card{padding:32px 24px}
+ .archive-item{flex-wrap:wrap}
+ .archive-btn{width:100%}
+ .footer-top{grid-template-columns:1fr;gap:32px}
+ .footer-btm{flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
 
@@ -50,7 +244,7 @@
     <li><a href="missions.html">Missions</a></li>
     <li><a href="resources.html">Resources</a></li>
     <li><a href="give.html">Give</a></li>
-    <li><a href="updates.html" class="active">Ministry Updates</a></li>
+    <li><a href="updates.html">Ministry Updates</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
  <div class="mob-cta">
@@ -83,22 +277,22 @@
     <li><span class="expect-dot"></span>What's coming next — events, trips, and partnership opportunities</li>
    </ul>
   </div>
-  <div class="signup-form-card"><form id="signup-form" onsubmit="handleFormSubmit(this,'signup-success');return false;"><input type="hidden" name="access_key" value="a4b05129-373e-4f40-a38e-bf7459378109"><input type="checkbox" name="botcheck" style="display:none"><input type="hidden" name="subject" value="Ministry Updates Signup">
+  <div class="signup-form-card">
    <h3>Receive Ministry Updates</h3>
    <p class="form-sub">Sign up to receive Billy and Rebecca's updates directly in your inbox.</p>
    <div class="ff">
     <label for="s-fname">First Name</label>
-    <input type="text" id="s-fname" name="first_name" required placeholder="Your first name" autocomplete="given-name">
+    <input type="text" id="s-fname" placeholder="Your first name" autocomplete="given-name">
    </div>
    <div class="ff">
     <label for="s-lname">Last Name</label>
-    <input type="text" id="s-lname" name="last_name" required placeholder="Your last name" autocomplete="family-name">
+    <input type="text" id="s-lname" placeholder="Your last name" autocomplete="family-name">
    </div>
    <div class="ff">
     <label for="s-email">Email Address</label>
-    <input type="email" id="s-email" name="email" required placeholder="you@example.com" autocomplete="email">
+    <input type="email" id="s-email" placeholder="you@example.com" autocomplete="email">
    </div>
-   <button type="submit" class="btn btn-primary form-submit">Sign Me Up</button>
+   <button type="button" class="btn btn-primary form-submit">Sign Me Up</button>
    <p class="form-privacy">We respect your privacy. No spam — ever. Unsubscribe anytime.</p>
   </div>
  </div>
@@ -118,18 +312,11 @@
      <img src="images/photos/letter-spring-2026.jpg" alt="Spring 2026 Ministry Update">
     </div>
     <div class="archive-info">
-     <!-- Spring 2026 -->
-   <!-- Year End 2025 -->
-   <!-- Summer 2025 -->
-   <!-- Spring 2025 -->
-   <!-- Year End 2024 -->
-   <!-- Summer 2024 -->
-   <!-- Spring 2024 -->
-   <span class="archive-badge" style="background:var(--green);color:var(--dark)">Spring 2026</span>
+     <span class="archive-badge" style="background:var(--green);color:var(--dark)">Spring 2026</span>
      <p class="archive-title">Spring 2026 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Spring_2026_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -143,7 +330,7 @@
      <p class="archive-title">Year End 2025 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Year_End_2025_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -157,7 +344,7 @@
      <p class="archive-title">Summer 2025 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Summer_2025_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -171,7 +358,7 @@
      <p class="archive-title">Spring 2025 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Spring_2025_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -185,7 +372,7 @@
      <p class="archive-title">Year End 2024 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Year_End_2024_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -199,7 +386,7 @@
      <p class="archive-title">Summer 2024 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Summer_2024_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -213,7 +400,7 @@
      <p class="archive-title">Spring 2024 Ministry Update</p>
      <p class="archive-note">Download to read the full letter from Billy &amp; Rebecca.</p>
     </div>
-    <a href="downloads/Spring_2024_Ministry_Update.pdf" class="btn btn-outline-blue archive-btn">
+    <a href="#" class="btn btn-outline-blue archive-btn">
      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:14px;height:14px;flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
      Download
     </a>
@@ -280,6 +467,43 @@
  </div>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script>
+document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+</script>
+<script>
+
+function showSuccess(el, msg) {
+  el.disabled = true;
+  var p = el.parentNode;
+  var d = document.createElement('div');
+  d.style.cssText = 'background:#edfbea;border:1px solid #abce30;border-radius:8px;padding:20px;margin-top:16px;color:#1a2b3c;font-size:15px;line-height:1.5';
+  d.innerHTML = msg;
+  p.appendChild(d);
+}
+document.querySelector('.form-submit').addEventListener('click', function() {
+  var btn = this;
+  var fname = document.getElementById('s-fname').value.trim();
+  var lname = document.getElementById('s-lname').value.trim();
+  var email = document.getElementById('s-email').value.trim();
+  if (!fname || !email) { alert('Please enter your name and email.'); return; }
+  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  btn.textContent = 'Signing up...'; btn.disabled = true;
+  fetch('https://api.web3forms.com/submit', {
+    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify({
+      access_key: 'a4b05129-373e-4f40-a38e-bf7459378109',
+      subject: 'Enspire Global Newsletter Signup',
+      name: fname + ' ' + lname,
+      email: email
+    })
+  }).then(function(r){return r.json()}).then(function(j){
+    if (j.success) showSuccess(btn, '<strong>You\'re signed up!</strong><br>Thank you, ' + fname + '. We\'ll be in touch with ministry updates.');
+    else { btn.textContent='Sign Me Up'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
+  }).catch(function(){
+    btn.textContent='Sign Me Up'; btn.disabled=false; alert('Something went wrong. Please try again.');
+  });
+});
+
+</script>
 </body>
 </html>
