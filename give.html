@@ -59,7 +59,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:var(--max-w);margin:0 auto;padding:0 24px}
 .nav-logo img{height:44px;width:auto;display:block;background:transparent}
 .nav-links{display:flex;align-items:center;gap:26px;list-style:none}
-.nav-links a{font-size:14.5px;font-weight:500;color:var(--dark);transition:color var(--t);position:relative;padding-bottom:2px}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--dark);transition:color var(--t);position:relative;padding-bottom:2px}.nav-links a.active{color:var(--blue)}.nav-links a.active::after{transform:scaleX(1)}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform var(--t);transform-origin:left}
 .nav-links a:hover{color:var(--blue)}
 .nav-links a:hover::after{transform:scaleX(1)}
@@ -85,7 +85,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
  position:absolute;inset:0;
  background:
   linear-gradient(105deg,rgba(10,111,160,.92) 0%,rgba(14,139,196,.75) 45%,rgba(26,43,60,.55) 100%),
-  url('images/photos/hero-give.jpg') center 30%/cover no-repeat;
+  url('images/photos/hero-give.jpg') center 18%/cover no-repeat;
 }
 .give-hero-bg::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
 .give-hero-content{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;padding:88px 24px;width:100%}
