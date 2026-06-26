@@ -665,6 +665,24 @@ document.querySelector('.fsub').addEventListener('click', function() {
     hBg.style.backgroundPositionY='calc(50% + '+(window.scrollY*0.2).toFixed(1)+'px)';
    },{passive:true});
   }
+  var storyImg=document.querySelector('.story-frame');
+  if(storyImg){
+   var wrap=document.createElement('div');
+   wrap.style.cssText='overflow:hidden;border-radius:10px;';
+   storyImg.style.borderRadius='0';
+   storyImg.style.willChange='transform';
+   storyImg.style.transform='scale(1.08)';
+   storyImg.style.display='block';
+   storyImg.parentNode.insertBefore(wrap,storyImg);
+   wrap.appendChild(storyImg);
+   function storyTick(){
+    var r=wrap.getBoundingClientRect();
+    var off=((r.top+r.height/2)/window.innerHeight-0.5)*40;
+    storyImg.style.transform='translateY('+off.toFixed(1)+'px) scale(1.08)';
+   }
+   window.addEventListener('scroll',storyTick,{passive:true});
+   storyTick();
+  }
  }
 })();
 </script>
