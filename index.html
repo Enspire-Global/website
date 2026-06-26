@@ -239,6 +239,18 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
  .signup{padding:28px 20px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* === PARALLAX + SCROLL ANIMATIONS === */
+@media(min-width:769px){
+ .hero-bg,.page-hero-bg,.give-hero-bg{background-attachment:fixed}
+ .reach-bg,.about-cta-bg,.impact-bg{background-attachment:fixed}
+ .svc-section.elevate::before,.svc-section.blindspot::before{background-attachment:fixed}
+ .blindspot-offer::before{background-attachment:fixed}
+ .svc-img{overflow:hidden}
+ .svc-img img{transform:scale(1.08);will-change:transform}
+}
+.anim{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.anim.in{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -615,6 +627,34 @@ document.querySelector('.fsub').addEventListener('click', function() {
   });
 });
 
+</script>
+<script>
+(function(){
+ // Scroll-triggered fade-up animations
+ var sel='section .eyebrow,section h2,section h3,.pcard,.fstat,.meet-card,.mcard,.partner-card,.give-card,.country-card,.gallery-item,.offer-box,.svc-text,.signup,.prayer-in>*,.mission-strip-inner';
+ var els=[].slice.call(document.querySelectorAll(sel));
+ els.forEach(function(el){el.classList.add('anim')});
+ var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+ },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+ els.forEach(function(el){io.observe(el)});
+ // Image parallax for the 6 What We Do photos
+ if(window.matchMedia('(min-width:769px)').matches){
+  var imgs=[].slice.call(document.querySelectorAll('.svc-img img'));
+  if(imgs.length){
+   function tick(){
+    imgs.forEach(function(img){
+     var wrap=img.closest('.svc-img');
+     var r=wrap.getBoundingClientRect();
+     var off=((r.top+r.height/2)/window.innerHeight-0.5)*50;
+     img.style.transform='translateY('+off.toFixed(1)+'px) scale(1.08)';
+    });
+   }
+   window.addEventListener('scroll',tick,{passive:true});
+   tick();
+  }
+ }
+})();
 </script>
 </body>
 </html>
