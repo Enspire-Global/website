@@ -636,6 +636,14 @@ document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()
    tick();
   }
  }
+ if(window.matchMedia('(min-width:769px)').matches){
+  var hBg=document.querySelector('.page-hero-bg');
+  if(hBg){
+   window.addEventListener('scroll',function(){
+    hBg.style.backgroundPositionY='calc(20% + '+(window.scrollY*0.04).toFixed(1)+'px)';
+   },{passive:true});
+  }
+ }
 })();
 </script>
 </body>
