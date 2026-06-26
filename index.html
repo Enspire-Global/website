@@ -677,7 +677,7 @@ document.querySelector('.fsub').addEventListener('click', function() {
    wrap.appendChild(storyImg);
    function storyTick(){
     var r=wrap.getBoundingClientRect();
-    var off=((r.top+r.height/2)/window.innerHeight-0.5)*40;
+    var off=((r.top+r.height/2)/window.innerHeight-0.5)*80;
     storyImg.style.transform='translateY('+off.toFixed(1)+'px) scale(1.08)';
    }
    window.addEventListener('scroll',storyTick,{passive:true});
