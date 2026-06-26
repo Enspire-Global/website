@@ -640,6 +640,16 @@ document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()
     hBg.style.backgroundPositionY='calc(20% + '+(window.scrollY*0.2).toFixed(1)+'px)';
    },{passive:true});
   }
+  var oFrame=document.querySelector('.origin-img-frame');
+  if(oFrame){
+   oFrame.style.overflow='hidden';
+   oFrame.style.backgroundSize='110%';
+   window.addEventListener('scroll',function(){
+    var r=oFrame.getBoundingClientRect();
+    var pct=30+((window.innerHeight/2-r.top-r.height/2)/window.innerHeight)*20;
+    oFrame.style.backgroundPositionY=pct.toFixed(1)+'%';
+   },{passive:true});
+  }
  }
 })();
 </script>
