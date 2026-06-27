@@ -254,6 +254,22 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
+/* WHO IS THIS FOR */
+.wif{padding:64px 24px;background:var(--off-white)}
+.wif-inner{max-width:var(--max-w);margin:0 auto}
+.wif-header{text-align:center;margin-bottom:40px}
+.wif-header .eyebrow{margin-bottom:10px}
+.wif-header h2{color:var(--dark)}
+.wif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.wif-card{background:var(--white);border-radius:12px;padding:36px 28px;border:1.5px solid rgba(14,139,196,.1);box-shadow:0 2px 12px rgba(26,43,60,.05);display:flex;flex-direction:column;gap:16px;transition:box-shadow .2s ease,transform .2s ease}
+.wif-card:hover{box-shadow:0 8px 28px rgba(26,43,60,.1);transform:translateY(-2px)}
+.wif-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wif-card h3{font-family:var(--font-d);font-size:1.15rem;font-weight:600;color:var(--dark);margin:0}
+.wif-card p{font-size:15px;color:var(--gray);line-height:1.6;margin:0;flex:1}
+.wif-card a{font-size:14px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;transition:gap .2s ease}
+.wif-card a:hover{gap:10px}
+@media(max-width:768px){.wif-grid{grid-template-columns:1fr}}
+
 /* === PARALLAX + SCROLL ANIMATIONS === */
 @media(min-width:769px){
  .reach-bg{background-attachment:fixed}
@@ -309,7 +325,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <p class="hero-identity">A Christian marriage and family ministry serving couples, families, men, and women — based in Little Rock, AR, reaching nationally and globally.</p>
    <p class="hero-sub">Your marriage is worth fighting for. Billy and Rebecca walk personally alongside couples, men, and women with faith-rooted coaching that leads to real, lasting change.</p>
    <div class="hero-actions">
-    <a href="what-we-do.html" class="btn btn-outline">See How We Help</a>
+    <a href="what-we-do.html" class="btn btn-primary">See How We Help</a>
     <a href="about.html" class="btn btn-outline">Meet Billy &amp; Rebecca</a>
    </div>
   </div>
@@ -321,6 +337,42 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 <section class="mission-strip" aria-label="Mission statement">
  <div class="mission-strip-inner">
   <p><strong>Our Mission:</strong> Enspire Global is dedicated to helping individuals be equipped, encouraged, and empowered to live out their purpose, strengthen their families, and deepen their relationship with the Lord.</p>
+ </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="wif" aria-labelledby="wif-h">
+ <div class="wif-inner">
+  <div class="wif-header">
+   <span class="eyebrow">Find Your Starting Place</span>
+   <h2 id="wif-h">Who is Enspire Global for?</h2>
+  </div>
+  <div class="wif-grid">
+   <div class="wif-card">
+    <div class="wif-icon" style="background:rgba(14,139,196,.1)">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#0E8BC4" stroke-width="1.8" stroke-linecap="round" width="26" height="26"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </div>
+    <h3>A couple — or individual — who needs help</h3>
+    <p>Whether your marriage is struggling, drifting, or you simply want to go deeper — Billy and Rebecca offer personal coaching for couples, men, and women.</p>
+    <a href="what-we-do.html#coaching-request">Request Coaching <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a>
+   </div>
+   <div class="wif-card">
+    <div class="wif-icon" style="background:rgba(171,206,48,.12)">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#8aaa20" stroke-width="1.8" stroke-linecap="round" width="26" height="26"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    </div>
+    <h3>A church looking for a ministry partner</h3>
+    <p>Billy and Rebecca speak at marriage conferences, lead retreats, and host date nights — coming alongside churches of all sizes to strengthen the families in their congregation.</p>
+    <a href="what-we-do.html#church-invite">Invite Us to Your Church <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a>
+   </div>
+   <div class="wif-card">
+    <div class="wif-icon" style="background:rgba(253,141,4,.1)">
+     <svg viewBox="0 0 24 24" fill="none" stroke="#FD8D04" stroke-width="1.8" stroke-linecap="round" width="26" height="26"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    </div>
+    <h3>Someone who wants to support the ministry</h3>
+    <p>Every coaching session, marriage event, and international trip is made possible by people who believe this work matters. Your gift — any size — makes a real difference.</p>
+    <a href="give.html">Give a Gift <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -379,7 +431,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
      </svg>
     </div>
     <h3>Empower</h3>
-    <p>We help people step into who God created them to be. Whether it's a husband leading his family, a couple rebuilding trust, or a woman finding her footing — we call people out and call them up to elevate them to the life God has for them.</p>
+    <p>We help people step into who God created them to be. Whether it's a husband leading his family, a couple rebuilding trust, or a woman finding her footing — we call people out and call them up.</p>
    </div>
   </div>
   <div class="pillars-cta">
@@ -612,7 +664,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     <ul>
      <li><a href="what-we-do.html">What We Do</a></li>
      <li><a href="what-we-do.html#coaching">Marriage Coaching</a></li>
-     <li><a href="what-we-do.html#events">Marriage Events</a></li>
+     <li><a href="what-we-do.html#marriage-events">Marriage Events</a></li>
      <li><a href="what-we-do.html#elevate">Elevate Men's Ministry</a></li>
      <li><a href="what-we-do.html#blindspot">Blindspot Media</a></li>
      <li><a href="what-we-do.html#womens">Women's Discipleship</a></li>
@@ -666,7 +718,13 @@ document.querySelector('.fsub').addEventListener('click', function() {
       email: email,
       botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
-    if (j.success) { btn.textContent = "You're signed up!"; }
+    if (j.success) {
+      btn.disabled = true;
+      var d = document.createElement('div');
+      d.style.cssText = 'background:#edfbea;border:1px solid #abce30;border-radius:8px;padding:20px;margin-top:16px;color:#1a2b3c;font-size:15px;line-height:1.5';
+      d.innerHTML = '<strong>You\'re signed up!</strong><br>Thank you. We\'ll be in touch with ministry updates.';
+      btn.parentNode.appendChild(d);
+    }
     else { btn.textContent='Sign Me Up'; btn.disabled=false; alert("Something went wrong. Please try again."); }
   }).catch(function(){
     btn.textContent='Sign Me Up'; btn.disabled=false; alert("Something went wrong. Please try again.");
