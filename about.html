@@ -15,6 +15,8 @@
 <meta name="twitter:title" content="About Us — Enspire Global">
 <meta name="twitter:description" content="Learn the story of Billy and Rebecca Altman — how a season of loss became a calling to equip, encourage, and empower marriages and families worldwide.">
 <meta name="description" content="Learn the story of Billy and Rebecca Altman — how a season of loss became a calling to serve marriages and families through Enspire Global.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -264,6 +266,24 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 /* COUNTRIES */
 .countries-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .ctag{background:var(--off-white);border:1px solid rgba(14,139,196,.15);color:var(--dark);padding:5px 13px;border-radius:100px;font-size:13px;font-weight:500}
+
+/* PILLARS */
+.pillars{padding:80px 24px;background:var(--white)}
+.pillars-inner{max-width:var(--max-w);margin:0 auto}
+.pillars-header{text-align:center;max-width:600px;margin:0 auto 48px}
+.pillars-header .eyebrow{margin-bottom:12px}
+.pillars-header h2{color:var(--dark);margin-bottom:14px}
+.pillars-header p{color:var(--gray);font-size:16px}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard{background:var(--off-white);border-radius:10px;padding:32px 28px;position:relative;overflow:hidden;transition:box-shadow .25s ease,transform .25s ease}
+.pcard:hover{box-shadow:0 8px 32px rgba(14,139,196,.12);transform:translateY(-3px)}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.pcard.bl::before{background:var(--blue)}.pcard.gr::before{background:var(--green)}.pcard.or::before{background:var(--orange)}
+.picon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.pcard.bl .picon{background:var(--blue-light)}.pcard.gr .picon{background:rgba(171,206,48,.12)}.pcard.or .picon{background:rgba(253,141,4,.1)}
+.pcard h3{color:var(--dark);margin-bottom:10px}
+.pcard p{color:var(--gray);font-size:15px;line-height:1.6;margin:0}
+@media(max-width:768px){.pillars-grid{grid-template-columns:1fr}}
 
 /* CLOSING CTA */
 .about-cta{padding:96px 24px;background:var(--dark);position:relative;overflow:hidden}
@@ -587,6 +607,55 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
      <span class="ctag">🇵🇪 Peru</span>
      <span class="ctag">🇬🇹 Guatemala</span>
     </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars" id="pillars" aria-labelledby="pillars-h">
+ <div class="pillars-inner">
+  <div class="pillars-header">
+   <span class="eyebrow">Why "Enspire" — Not "Inspire"</span>
+   <h2 id="pillars-h">Equip. Encourage. Empower.</h2>
+   <p>The "E" in Enspire is intentional. These three words define how Billy and Rebecca approach every couple they coach, every event they lead, and every community they serve.</p>
+  </div>
+  <div class="pillars-grid">
+   <div class="pcard bl">
+    <div class="picon">
+     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="2" y="10" width="20" height="11" rx="2" stroke="#0E8BC4" stroke-width="1.8" fill="none"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#0E8BC4" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <line x1="2" y1="15.5" x2="22" y2="15.5" stroke="#0E8BC4" stroke-width="1.8"/>
+      <rect x="9.5" y="14" width="5" height="3" rx="1" stroke="#0E8BC4" stroke-width="1.5" fill="none"/>
+     </svg>
+    </div>
+    <h3>Equip</h3>
+    <p>We give couples, families, men, and women practical tools, coaching, and resources they can actually use — in their marriage, their home, and their walk with the Lord.</p>
+   </div>
+   <div class="pcard gr">
+    <div class="picon">
+     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="8" cy="5.5" r="2.2" stroke="#8aaa20" stroke-width="1.8" fill="none"/>
+      <path d="M4 20v-2a4 4 0 0 1 4-4 4 4 0 0 1 4 4v2" stroke="#8aaa20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="16" cy="5.5" r="2.2" stroke="#8aaa20" stroke-width="1.8" fill="none"/>
+      <path d="M12 20v-2a4 4 0 0 1 4-4 4 4 0 0 1 4 4v2" stroke="#8aaa20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+     </svg>
+    </div>
+    <h3>Encourage</h3>
+    <p>Sometimes what people need most is someone to show up with them. We're present in the hard seasons, the drifting seasons, and the growing seasons — with honesty, warmth, and hope.</p>
+   </div>
+   <div class="pcard or">
+    <div class="picon">
+     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="12" cy="5" r="2.5" stroke="#FD8D04" stroke-width="1.8" fill="none"/>
+      <path d="M12 9v6" stroke="#FD8D04" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M8 12l4-3 4 3" stroke="#FD8D04" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 15l-3 5h12l-3-5" stroke="#FD8D04" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+     </svg>
+    </div>
+    <h3>Empower</h3>
+    <p>We help people step into who God created them to be. Whether it's a husband leading his family, a couple rebuilding trust, or a woman finding her footing — we call people out and call them up.</p>
    </div>
   </div>
  </div>
