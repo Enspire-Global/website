@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources — Enspire Global</title>
+<title>Free Marriage Resources & Conversation Guides | Enspire Global</title>
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Resources — Enspire Global">
@@ -439,10 +439,11 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   <span class="eyebrow">Stay in the Loop</span>
   <h2 id="notify-h">New resources, delivered to your inbox.</h2>
   <p>Sign up for Ministry Updates and be the first to know when new tools, guides, and resources are available from Enspire Global.</p>
-  <div class="notify-form">
-   <input type="email" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
-   <button type="button" class="btn btn-green">Notify Me</button>
+  <div class="notify-form" id="notify-form">
+   <input type="email" id="notify-email" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
+   <button type="button" class="btn btn-green" onclick="submitNotify()">Notify Me</button>
   </div>
+  <p id="notify-msg" style="display:none;color:#fff;margin-top:16px;font-size:15px;opacity:.9"></p>
  </div>
 </section>
 
@@ -556,6 +557,23 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 
 <script>
 document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+
+function submitNotify() {
+ var email = document.getElementById('notify-email').value.trim();
+ var msg = document.getElementById('notify-msg');
+ if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+ fetch('https://api.web3forms.com/submit', {
+  method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+  body: JSON.stringify({botcheck:false, access_key:'a4b05129-373e-4f40-a38e-bf7459378109', email:email, name:email, subject:'Resource Notify Me — Enspire Global'})
+ }).then(function(){
+  document.getElementById('notify-form').style.display='none';
+  msg.textContent = "You're on the list! We'll email you as soon as new resources are available.";
+  msg.style.display='block';
+ }).catch(function(){
+  msg.textContent = "Something went wrong. Please try emailing info@enspireglobal.org directly.";
+  msg.style.display='block';
+ });
+}
 
 function validateForm(nameId, emailId) {
  var name = document.getElementById(nameId).value.trim();
