@@ -214,7 +214,26 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .hiw-step p{color:var(--gray);font-size:14px;line-height:1.55}
 
 /* OTHER WAYS */
-.other-ways{padding:80px 24px;background:var(--off-white)}
+.faq-section{padding:88px 24px;background:var(--off-white)}
+.faq-inner{max-width:760px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:52px}
+.faq-header .eyebrow{margin-bottom:12px}
+.faq-header h2{color:var(--dark);margin-bottom:12px}
+.faq-header p{color:var(--gray);font-size:16px}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid rgba(26,43,60,.1)}
+.faq-item:first-child{border-top:1px solid rgba(26,43,60,.1)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--font-b);font-size:16px;font-weight:600;color:var(--dark);line-height:1.4;position:relative;transition:color .2s ease}
+.faq-q:hover{color:var(--blue)}
+.faq-q::after{content:'';position:absolute;right:4px;top:50%;transform:translateY(-50%) rotate(0deg);width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-60%) rotate(45deg);transition:transform .25s ease}
+.faq-q[aria-expanded="true"]{color:var(--blue)}
+.faq-q[aria-expanded="true"]::after{transform:translateY(-40%) rotate(225deg)}
+.faq-a{display:none;padding:0 40px 22px 0}
+.faq-a.open{display:block}
+.faq-a p{color:var(--gray);font-size:15.5px;line-height:1.75;margin-bottom:.75rem}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.other-ways{padding:80px 24px;background:var(--white)}
 .other-ways-inner{max-width:var(--max-w);margin:0 auto}
 .other-ways-header{text-align:center;max-width:520px;margin:0 auto 48px}
 .other-ways-header .eyebrow{margin-bottom:12px}
@@ -514,6 +533,90 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
  </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq" aria-labelledby="faq-h">
+ <div class="faq-inner">
+  <div class="faq-header">
+   <span class="eyebrow">Common Questions</span>
+   <h2 id="faq-h">Answers before you ask.</h2>
+   <p>Everything you want to know about giving, coaching, and how Enspire Global works.</p>
+  </div>
+  <div class="faq-list">
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Is my gift tax-deductible?</button>
+    <div class="faq-a">
+     <p>Yes. Enspire Global operates under the fiscal sponsorship of Global Service Network (GSN), a registered 501(c)(3) nonprofit. All gifts are processed through GSN, which means your donation is fully tax-deductible. You will receive a tax receipt from GSN for your records.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">What is Global Service Network (GSN)?</button>
+    <div class="faq-a">
+     <p>Global Service Network is a nonprofit organization that provides financial and administrative support for faith-based missionaries and ministries. Billy and Rebecca Altman serve as supported missionaries through GSN, which means your gifts are received, processed, and receipted by GSN on behalf of Enspire Global. It's a secure, established system used by hundreds of ministry families.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Can I give monthly?</button>
+    <div class="faq-a">
+     <p>Yes — and monthly giving is the most impactful way to support the ministry. A recurring gift provides the stable foundation Billy and Rebecca need to serve couples, disciple men and women, and travel internationally without financial uncertainty. You can set up a recurring gift directly through the GSN giving portal.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Where exactly does my money go?</button>
+    <div class="faq-a">
+     <p>Every dollar given to Enspire Global goes directly to funding the ministry — marriage coaching, date nights and marriage events, men's and women's discipleship, international missions trips, Blindspot Media projects, and free resources for families. Billy and Rebecca are personally in the field doing the work your giving makes possible. There is no large organizational overhead between your gift and the impact.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">How much does marriage coaching cost?</button>
+    <div class="faq-a">
+     <p>Marriage coaching through Enspire Global is free, or by suggested donation. Billy and Rebecca believe cost should never be a barrier to a couple getting the help they need. If you'd like to give toward covering the cost of coaching for couples who can't afford it, you can do so through any gift to the ministry.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">How many coaching sessions will we have?</button>
+    <div class="faq-a">
+     <p>Coaching is open-ended — there's no set number of sessions. Every couple is different, and Billy and Rebecca walk with couples as long as it's needed and helpful. Some couples need just a few conversations to get back on track; others choose to meet regularly over a longer season. The goal is always your marriage, not a checklist.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Do we have to live in Little Rock to receive coaching?</button>
+    <div class="faq-a">
+     <p>No. Coaching is available both in person (Little Rock, AR) and virtually. If you're outside the area, virtual sessions work just as well and remove any geographic barrier. Reach out through the <a href="what-we-do.html#coaching">coaching request form</a> and Billy and Rebecca will connect with you.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Are coaching sessions confidential?</button>
+    <div class="faq-a">
+     <p>Yes. Everything shared in coaching is kept in complete confidence. You can come honestly — wherever your marriage is — without fear of judgment or disclosure.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">Do you speak at non-Christian or secular events?</button>
+    <div class="faq-a">
+     <p>Yes. While Enspire Global is a faith-based ministry, Billy and Rebecca are open to speaking at a wide range of events and venues. Their message — that healthy marriages and strong families are worth fighting for — resonates across many contexts. <a href="contact.html">Reach out</a> and let's talk about what you have in mind.</p>
+    </div>
+   </div>
+
+   <div class="faq-item">
+    <button class="faq-q" aria-expanded="false">How far in advance should we book a marriage event?</button>
+    <div class="faq-a">
+     <p>A minimum of three months in advance, with four to six months preferred. This allows adequate time for planning, promotion, and preparation to make your event as impactful as possible. To check availability and start the conversation, use the <a href="what-we-do.html#forms">church invite form</a>.</p>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
 <!-- OTHER WAYS TO GIVE / PARTNER -->
 <section class="other-ways" aria-labelledby="ow-h">
  <div class="other-ways-inner">
@@ -622,6 +725,23 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 
 <script>
 document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var expanded = this.getAttribute('aria-expanded')==='true';
+    // close all
+    document.querySelectorAll('.faq-q').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // open clicked if it was closed
+    if(!expanded){
+      this.setAttribute('aria-expanded','true');
+      this.nextElementSibling.classList.add('open');
+    }
+  });
+});
 </script>
 <script>
 (function(){
