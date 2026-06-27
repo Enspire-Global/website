@@ -158,6 +158,35 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .impact-card p{color:rgba(255,255,255,.65);font-size:14.5px;line-height:1.65;margin:0}
 
 /* TESTIMONIALS */
+.giving-levels{padding:96px 24px;background:var(--white)}
+.gl-inner{max-width:var(--max-w);margin:0 auto}
+.gl-header{text-align:center;max-width:640px;margin:0 auto 56px}
+.gl-header .eyebrow{margin-bottom:12px}
+.gl-header h2{color:var(--dark);margin-bottom:16px}
+.gl-header p{color:var(--gray);font-size:16px;line-height:1.75}
+.gl-cascade{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:0 auto 56px;max-width:860px}
+.gl-cascade-step{background:var(--dark);color:var(--white);font-size:13.5px;font-weight:700;letter-spacing:.04em;padding:12px 22px;border-radius:6px;white-space:nowrap}
+.gl-cascade-arrow{color:var(--blue);font-size:20px;font-weight:700;padding:0 10px;flex-shrink:0}
+.gl-who{background:var(--off-white);border-radius:10px;padding:24px 32px;max-width:740px;margin:0 auto 56px;text-align:center}
+.gl-who p{color:var(--gray);font-size:15px;line-height:1.7;margin:0}
+.gl-who strong{color:var(--dark)}
+.gl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.gl-card{border:1.5px solid rgba(26,43,60,.1);border-radius:12px;padding:32px 28px;display:flex;flex-direction:column;transition:box-shadow .2s ease,transform .2s ease}
+.gl-card:hover{box-shadow:0 8px 28px rgba(26,43,60,.1);transform:translateY(-2px)}
+.gl-card.featured{border-color:var(--blue);background:var(--blue-light)}
+.gl-amount{font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:var(--blue);line-height:1;margin-bottom:4px}
+.gl-amount span{font-size:1rem;font-weight:500;color:var(--gray)}
+.gl-card h4{font-family:var(--font-d);font-size:1rem;font-weight:600;color:var(--dark);margin:10px 0 10px}
+.gl-card p{color:var(--gray);font-size:14px;line-height:1.7;flex:1;margin:0}
+.gl-cta{text-align:center}
+.gl-cta p{color:var(--gray);font-size:15px;margin-bottom:20px}
+@media(max-width:1024px){.gl-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+ .gl-grid{grid-template-columns:1fr}
+ .gl-cascade{gap:4px}
+ .gl-cascade-step{font-size:12px;padding:10px 14px}
+ .gl-cascade-arrow{padding:0 6px;font-size:16px}
+}
 .testimonials{padding:80px 24px;background:var(--off-white)}
 .testimonials-inner{max-width:var(--max-w);margin:0 auto}
 .testimonials-header{text-align:center;max-width:520px;margin:0 auto 52px}
@@ -469,6 +498,79 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     <p>Equip Billy to travel internationally and produce professional photo and video for ministries at no charge — covering only the cost of the trip.</p>
    </div>
   </div>
+ </div>
+</section>
+
+<!-- GIVING LEVELS -->
+<section class="giving-levels" id="giving-levels" aria-labelledby="gl-h">
+ <div class="gl-inner">
+  <div class="gl-header">
+   <span class="eyebrow">What Your Gift Does</span>
+   <h2 id="gl-h">Every dollar starts a chain reaction.</h2>
+   <p>Billy and Rebecca don't just coach marriages. They believe transformation ripples outward — from one person to a marriage, from a marriage to a family, from a family to a community, and from a community to the world. Your gift funds that chain reaction.</p>
+  </div>
+
+  <div class="gl-cascade">
+   <div class="gl-cascade-step">Change a man</div>
+   <div class="gl-cascade-arrow">→</div>
+   <div class="gl-cascade-step">Change the marriage</div>
+   <div class="gl-cascade-arrow">→</div>
+   <div class="gl-cascade-step">Change the family</div>
+   <div class="gl-cascade-arrow">→</div>
+   <div class="gl-cascade-step">Change the community</div>
+   <div class="gl-cascade-arrow">→</div>
+   <div class="gl-cascade-step">Change the world</div>
+  </div>
+
+  <div class="gl-who">
+   <p><strong>Billy and Rebecca coach couples together.</strong> Billy works one-on-one with men. Rebecca works one-on-one with women. Every member of a family has someone walking alongside them — and it's all free.</p>
+  </div>
+
+  <div class="gl-grid">
+
+   <div class="gl-card">
+    <div class="gl-amount">$35<span>/mo</span></div>
+    <h4>Sponsor a Couple for Date Night</h4>
+    <p>Covers one couple's full attendance at an Illuminate Date Night — an evening of dinner, community, and biblical encouragement. Couples leave saying "we had fun dreaming together again."</p>
+   </div>
+
+   <div class="gl-card">
+    <div class="gl-amount">$100<span>/mo</span></div>
+    <h4>Keep the Ministry Running</h4>
+    <p>Covers the monthly subscriptions Billy and Rebecca depend on — video and photo editing software, ministry management tools, and the digital infrastructure behind every resource, letter, and event.</p>
+   </div>
+
+   <div class="gl-card">
+    <div class="gl-amount">$250<span>/mo</span></div>
+    <h4>Send a Father and Son to Elevate</h4>
+    <p>Sponsors two father-son pairs at the annual Elevate Retreat — a weekend where fathers are equipped to lead and sons step into identity in Christ. Last year, one father left saying: "I will be a better father. I have to — for my son's sake."</p>
+   </div>
+
+   <div class="gl-card featured">
+    <div class="gl-amount">$500<span>/mo</span></div>
+    <h4>Fund International Mission Travel</h4>
+    <p>Ministries overseas receive professional-grade photo and video — work that would cost $20,000–$50,000 to hire out — for just the cost of Billy's travel. $500/month keeps him going when a ministry can't cover his expenses. Without it, he stays home.</p>
+   </div>
+
+   <div class="gl-card">
+    <div class="gl-amount">$1,000<span>/mo</span></div>
+    <h4>Sustain Free Coaching for Families</h4>
+    <p>A licensed marriage counselor in Arkansas charges $100–$175 per hour. Billy and Rebecca coach couples, men, and women for free. $1,000/month helps sustain that ministry of accessibility — so cost is never the reason a family doesn't get help.</p>
+   </div>
+
+   <div class="gl-card">
+    <div class="gl-amount">Any<span> amount</span></div>
+    <h4>Join the $12,500 Team</h4>
+    <p>Enspire Global needs $12,500 every month to cover all living and ministry expenses. Every recurring gift — at any level — moves that number. Monthly giving is the most impactful thing a partner can do.</p>
+   </div>
+
+  </div>
+
+  <div class="gl-cta">
+   <p>Every gift goes directly to the work. No large organization. No overhead. Just Billy and Rebecca — in the field, serving people, and pointing families to Christ.</p>
+   <a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" class="btn btn-give" target="_blank" rel="noopener" style="font-size:16px;padding:16px 44px">Give a Gift Today</a>
+  </div>
+
  </div>
 </section>
 
