@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What We Do — Enspire Global">
 <meta name="twitter:description" content="Enspire Global offers marriage coaching, marriage events, men's discipleship through Elevate, women's discipleship, Blindspot Media, and international missions.">
-<meta name="description" content="Enspire Global offers marriage coaching, marriage events, men's discipleship through Elevate, women's discipleship, visual storytelling through Blindspot Media, and international missions.">
+<meta name="description" content="Looking for Christian marriage coaching, a marriage speaker for your church, or men's and women's discipleship? See everything Enspire Global offers — and find your next step.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -217,6 +217,12 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .footer-btm p,.footer-btm a{color:rgba(255,255,255,.3);font-size:13px}
 .footer-btm a:hover{color:rgba(255,255,255,.65)}
 
+/* MOBILE QUICK-NAV */
+.mob-quicknav{display:none;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding:14px 24px;background:var(--white);border-bottom:1px solid rgba(14,139,196,.1);position:sticky;top:76px;z-index:50}
+.mob-quicknav a{display:inline-block;font-size:13px;font-weight:600;color:var(--gray);padding:7px 14px;border-radius:100px;border:1.5px solid rgba(26,43,60,.12);margin-right:8px;transition:background .2s,color .2s,border-color .2s;text-decoration:none;white-space:nowrap}
+.mob-quicknav a:hover,.mob-quicknav a:focus{background:var(--blue-light);color:var(--blue);border-color:var(--blue)}
+@media(max-width:768px){.mob-quicknav{display:block}}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
  .svc-inner{gap:48px}
@@ -241,6 +247,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 }
 .anim{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .anim.in{opacity:1;transform:translateY(0)}
+.ctag{background:var(--off-white);border:1px solid rgba(14,139,196,.15);color:var(--dark);padding:5px 13px;border-radius:100px;font-size:13px;font-weight:500;display:inline-block}
 </style>
 </head>
 <body>
@@ -291,12 +298,22 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
  </div>
 </section>
 
+<!-- MOBILE QUICK-NAV -->
+<nav class="mob-quicknav" aria-label="Jump to section">
+ <a href="#marriage-events">Marriage Events</a>
+ <a href="#coaching">Coaching</a>
+ <a href="#elevate">Men's Ministry</a>
+ <a href="#womens">Women's</a>
+ <a href="#blindspot">Blindspot Media</a>
+ <a href="#missions">Missions</a>
+</nav>
+
 <!-- INTRO -->
 <section class="wwd-intro" aria-label="Introduction">
  <div class="wwd-intro-inner">
   <span class="eyebrow">What We Offer</span>
   <h2>Six ways we serve — one mission.</h2>
-  <p>Whether you're a couple looking for help, a church wanting a ministry partner, or an organization needing to tell its story visually — Enspire Global has something for you.</p>
+  <p>Whether you're looking for Christian marriage coaching, a marriage event speaker for your church, men's or women's discipleship, or visual storytelling for your ministry — Enspire Global has something for you.</p>
  </div>
 </section>
 
@@ -569,10 +586,6 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   </div>
  </div>
 </footer>
-
-<style>
-.ctag{background:var(--off-white);border:1px solid rgba(14,139,196,.15);color:var(--dark);padding:5px 13px;border-radius:100px;font-size:13px;font-weight:500;display:inline-block}
-</style>
 
 <script>
 document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));

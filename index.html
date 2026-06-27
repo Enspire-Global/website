@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Enspire Global — Empowering Marriages & Families">
 <meta name="twitter:description" content="Enspire Global equips, encourages, and empowers marriages and families to build healthy, growing, love-filled relationships — rooted in faith.">
-<meta name="description" content="Enspire Global equips, encourages, and empowers marriages and families to build healthy, love-filled relationships rooted in faith. Based in Little Rock, Arkansas, serving nationally and globally.">
+<meta name="description" content="Is your marriage worth fighting for? Enspire Global offers faith-based marriage coaching, events, and discipleship for couples, men, and women — based in Little Rock, AR, serving nationally and globally.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,6 +264,30 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .anim{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .anim.in{opacity:1;transform:translateY(0)}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Enspire Global",
+  "url": "https://enspireglobal.org",
+  "logo": "https://enspireglobal.org/images/logos/enspire-global-color.png",
+  "description": "A Christian marriage and family ministry offering coaching, events, men's and women's discipleship, and international missions.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Little Rock",
+    "addressRegion": "AR",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@enspireglobal.org",
+    "contactType": "customer support"
+  },
+  "sameAs": [
+    "https://www.blindspot.media"
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -645,7 +669,7 @@ document.querySelector('.fsub').addEventListener('click', function() {
       btn.disabled = true;
       var d = document.createElement('div');
       d.style.cssText = 'background:#edfbea;border:1px solid #abce30;border-radius:8px;padding:20px;margin-top:16px;color:#1a2b3c;font-size:15px;line-height:1.5';
-      d.innerHTML = '<strong>You\'re signed up!</strong><br>Thank you. We\'ll be in touch with ministry updates.';
+      d.innerHTML = '<strong>You\'re signed up!</strong><br>Thank you. Watch for your first update from us in the next few weeks — stories from the field, prayer requests, and ways to pray along with us.';
       btn.parentNode.appendChild(d);
     }
     else { btn.textContent='Sign Me Up'; btn.disabled=false; alert("Something went wrong. Please try again."); }
