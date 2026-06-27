@@ -132,7 +132,6 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
  border-top:1px solid rgba(26,43,60,.08);
 }
 .give-card-gsn img{max-height:28px;width:auto;opacity:.6}
-.give-card-gsn p{font-size:12.5px;color:var(--gray);margin:0}
 
 /* IMPACT SECTION */
 .impact{padding:80px 24px;background:var(--dark);position:relative;overflow:hidden}
@@ -164,12 +163,14 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .gl-header .eyebrow{margin-bottom:12px}
 .gl-header h2{color:var(--dark);margin-bottom:16px}
 .gl-header p{color:var(--gray);font-size:16px;line-height:1.75}
-.gl-cascade{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:0 auto 56px;max-width:860px}
-.gl-cascade-step{background:var(--dark);color:var(--white);font-size:13.5px;font-weight:700;letter-spacing:.04em;padding:12px 22px;border-radius:6px;white-space:nowrap}
-.gl-cascade-arrow{color:var(--blue);font-size:20px;font-weight:700;padding:0 10px;flex-shrink:0}
+.gl-cascade{display:flex;align-items:flex-start;justify-content:center;gap:0;max-width:900px;margin:0 auto 56px}
+.gl-cascade-step{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+.gl-cascade-arrow{flex-shrink:0;width:40px;display:flex;align-items:flex-start;padding-top:14px;justify-content:center}
+.gl-cascade-arrow::after{content:'';display:block;width:11px;height:11px;border-right:2.5px solid var(--blue);border-top:2.5px solid var(--blue);transform:rotate(45deg);opacity:.7}
+.gl-cascade-num{width:48px;height:48px;border-radius:50%;background:var(--white);border:2px solid var(--blue);color:var(--blue);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 3px 14px rgba(14,139,196,.18)}
+.gl-cascade-label{font-size:12.5px;font-weight:600;color:var(--dark);line-height:1.4;padding:0 6px}
 .gl-who{background:var(--off-white);border-radius:10px;padding:24px 32px;max-width:740px;margin:0 auto 56px;text-align:center}
 .gl-who p{color:var(--gray);font-size:15px;line-height:1.7;margin:0}
-.gl-who strong{color:var(--dark)}
 .gl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
 .gl-card{border:1.5px solid rgba(26,43,60,.1);border-radius:12px;padding:32px 28px;display:flex;flex-direction:column;transition:box-shadow .2s ease,transform .2s ease}
 .gl-card:hover{box-shadow:0 8px 28px rgba(26,43,60,.1);transform:translateY(-2px)}
@@ -183,9 +184,12 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 @media(max-width:1024px){.gl-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){
  .gl-grid{grid-template-columns:1fr}
- .gl-cascade{gap:4px}
- .gl-cascade-step{font-size:12px;padding:10px 14px}
- .gl-cascade-arrow{padding:0 6px;font-size:16px}
+ .gl-cascade{flex-direction:column;align-items:flex-start;max-width:220px;margin-left:auto;margin-right:auto}
+ .gl-cascade-step{flex-direction:row;flex:none;width:100%;text-align:left;gap:16px;padding:4px 0}
+ .gl-cascade-arrow{width:48px;height:24px;padding-top:0;align-items:center;justify-content:flex-start;padding-left:18px}
+ .gl-cascade-arrow::after{transform:rotate(135deg)}
+ .gl-cascade-num{flex-shrink:0;margin-bottom:0}
+ .gl-cascade-label{padding:0}
 }
 .testimonials{padding:80px 24px;background:var(--off-white)}
 .testimonials-inner{max-width:var(--max-w);margin:0 auto}
@@ -242,7 +246,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .hiw-step h4{font-family:var(--font-d);font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:8px}
 .hiw-step p{color:var(--gray);font-size:14px;line-height:1.55}
 
-/* OTHER WAYS */
+/* FAQ */
 .faq-section{padding:88px 24px;background:var(--off-white)}
 .faq-inner{max-width:760px;margin:0 auto}
 .faq-header{text-align:center;margin-bottom:52px}
@@ -254,7 +258,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .faq-item:first-child{border-top:1px solid rgba(26,43,60,.1)}
 .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--font-b);font-size:16px;font-weight:600;color:var(--dark);line-height:1.4;position:relative;transition:color .2s ease}
 .faq-q:hover{color:var(--blue)}
-.faq-q::after{content:'';position:absolute;right:4px;top:50%;transform:translateY(-50%) rotate(0deg);width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-60%) rotate(45deg);transition:transform .25s ease}
+.faq-q::after{content:'';position:absolute;right:4px;top:50%;transform:translateY(-60%) rotate(45deg);width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transition:transform .25s ease}
 .faq-q[aria-expanded="true"]{color:var(--blue)}
 .faq-q[aria-expanded="true"]::after{transform:translateY(-40%) rotate(225deg)}
 .faq-a{display:none;padding:0 40px 22px 0}
@@ -416,11 +420,9 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    </div>
    <h3>Ready to give?</h3>
    <p>Giving is safe, simple, and processed securely through Global Service Network. Every gift — large or small — makes a real difference.</p>
+   <p style="font-size:13px;color:var(--gray);margin:0 0 16px;line-height:1.6;">When you click Give, you'll be taken to our secure giving partner — Global Service Network. Your gift goes directly to supporting Enspire Global.</p>
    <a href="https://give.globalservicenetwork.org/giftcart/give.aspx?desig=51023003" class="btn btn-give-lg" target="_blank" rel="noopener" style="display:block;width:100%;font-size:16px;padding:16px">Give a Gift Today</a>
-   <p style="font-size:13px;color:var(--gray);margin:0 0 16px;line-height:1.6;">
-        When you click Give, you'll be taken to our secure giving partner — Global Service Network. Your gift goes directly to supporting Enspire Global.
-      </p>
-      <div class="give-card-gsn">
+   <div class="give-card-gsn">
     <img src="images/logos/gsn-gray.png" alt="Powered by Global Service Network" style="max-height:32px;width:auto;display:block;">
    </div>
   </div>
@@ -511,19 +513,34 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   </div>
 
   <div class="gl-cascade">
-   <div class="gl-cascade-step">Change a man</div>
-   <div class="gl-cascade-arrow">→</div>
-   <div class="gl-cascade-step">Change the marriage</div>
-   <div class="gl-cascade-arrow">→</div>
-   <div class="gl-cascade-step">Change the family</div>
-   <div class="gl-cascade-arrow">→</div>
-   <div class="gl-cascade-step">Change the community</div>
-   <div class="gl-cascade-arrow">→</div>
-   <div class="gl-cascade-step">Change the world</div>
+   <div class="gl-cascade-step">
+    <div class="gl-cascade-num">1</div>
+    <span class="gl-cascade-label">Change a man</span>
+   </div>
+   <div class="gl-cascade-arrow" aria-hidden="true"></div>
+   <div class="gl-cascade-step">
+    <div class="gl-cascade-num">2</div>
+    <span class="gl-cascade-label">Change the marriage</span>
+   </div>
+   <div class="gl-cascade-arrow" aria-hidden="true"></div>
+   <div class="gl-cascade-step">
+    <div class="gl-cascade-num">3</div>
+    <span class="gl-cascade-label">Change the family</span>
+   </div>
+   <div class="gl-cascade-arrow" aria-hidden="true"></div>
+   <div class="gl-cascade-step">
+    <div class="gl-cascade-num">4</div>
+    <span class="gl-cascade-label">Change the community</span>
+   </div>
+   <div class="gl-cascade-arrow" aria-hidden="true"></div>
+   <div class="gl-cascade-step">
+    <div class="gl-cascade-num">5</div>
+    <span class="gl-cascade-label">Change the world</span>
+   </div>
   </div>
 
   <div class="gl-who">
-   <p><strong>Billy and Rebecca coach couples together.</strong> Billy works one-on-one with men. Rebecca works one-on-one with women. Every member of a family has someone walking alongside them — and it's all free.</p>
+   <p>Different conversations, one goal. A man working on himself. A woman finding her footing. A couple fighting for their marriage. Billy and Rebecca walk alongside all of them — because stronger relationships build stronger families, and stronger families change the world.</p>
   </div>
 
   <div class="gl-grid">
