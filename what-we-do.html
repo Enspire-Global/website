@@ -314,7 +314,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <p>Billy and Rebecca partner with churches as keynote speakers and ministry partners for marriage conferences, weekend retreats, date nights, and one-day events. They serve churches both large and small, coming alongside them to encourage and equip couples at every stage of relationship.</p>
    <p>Whether your church is hosting its first marriage event or has an established program, Enspire Global will show up prepared, personal, and ready to serve your congregation well.</p>
    <div class="svc-cta">
-    <a href="#invite-us" class="btn btn-primary">Invite Us to Your Church</a>
+    <a href="#church-invite" class="btn btn-primary">Invite Us to Your Church</a>
     <a href="contact.html" class="btn btn-outline-blue">Ask a Question</a>
    </div>
   </div>
@@ -458,11 +458,11 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   <div class="forms-grid">
 
    <!-- CHURCH FORM -->
-   <div class="form-card">
+   <div class="form-card" id="church-invite">
     <p class="form-card-eyebrow blue">For Churches</p>
     <h3>Invite Us to Your Church</h3>
     <p class="form-sub">Tell us about your church and the type of event you're planning. We'll be in touch shortly.</p>
-    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+    <input type="checkbox" name="botcheck-church" style="display:none" tabindex="-1" aria-hidden="true">
    <div class="ff"><label for="c-name">Your Name</label><input type="text" id="c-name" placeholder="First and last name" autocomplete="name"></div>
     <div class="ff"><label for="c-church">Church Name</label><input type="text" id="c-church" placeholder="Your church name"></div>
     <div class="ff"><label for="c-city">City &amp; State</label><input type="text" id="c-city" placeholder="City, State"></div>
@@ -479,15 +479,16 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
      </select>
     </div>
     <div class="ff"><label for="c-date">Preferred Date Range</label><input type="text" id="c-date" placeholder="e.g. Spring 2025, flexible"></div>
-    <button type="button" class="btn btn-primary form-submit">Send Invitation Request</button>
+    <button type="button" id="btn-church" class="btn btn-primary form-submit">Send Invitation Request</button>
     <p class="form-privacy">We'll be in touch soon.</p>
    </div>
 
    <!-- COUPLE FORM -->
-   <div class="form-card">
+   <div class="form-card" id="coaching-request">
     <p class="form-card-eyebrow orange">For Couples</p>
     <h3>Request Marriage Coaching</h3>
     <p class="form-sub">We'd love to connect with you. Share a little about where you are and what you're looking for.</p>
+    <input type="checkbox" name="botcheck-coaching" style="display:none" tabindex="-1" aria-hidden="true">
     <div class="ff"><label for="p-name">Your Names</label><input type="text" id="p-name" placeholder="Both first names" autocomplete="name"></div>
     <div class="ff"><label for="p-email">Email Address</label><input type="email" id="p-email" placeholder="you@example.com" autocomplete="email"></div>
     <div class="ff">
@@ -501,7 +502,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     </div>
     <div class="ff"><label for="p-hear">How did you hear about us?</label><input type="text" id="p-hear" placeholder="Friend, church, social media..."></div>
     <div class="ff"><label for="p-note">Tell us a little about what you're looking for</label><textarea id="p-note" placeholder="A brief note about where you are and what brought you here..."></textarea></div>
-    <button type="button" class="btn btn-give form-submit">Request Coaching</button>
+    <button type="button" id="btn-coaching" class="btn btn-give form-submit">Request Coaching</button>
     <p class="form-privacy">All conversations are kept in confidence.</p>
    </div>
 
@@ -578,21 +579,19 @@ document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()
 
 function showSuccess(el, msg) {
   el.disabled = true;
-  var p = el.parentNode;
   var d = document.createElement('div');
   d.style.cssText = 'background:#edfbea;border:1px solid #abce30;border-radius:8px;padding:20px;margin-top:16px;color:#1a2b3c;font-size:15px;line-height:1.5';
   d.innerHTML = msg;
-  p.appendChild(d);
+  el.parentNode.appendChild(d);
 }
 // Church invite form
-var btns = document.querySelectorAll('.form-submit');
-btns[0].addEventListener('click', function() {
+document.getElementById('btn-church').addEventListener('click', function() {
   var btn = this;
   var name = document.getElementById('c-name').value.trim();
   var church = document.getElementById('c-church').value.trim();
   var city = document.getElementById('c-city').value.trim();
   var email = document.getElementById('c-email').value.trim();
-  var event_type = document.getElementById('c-event') ? document.getElementById('c-event').value : '';
+  var event_type = document.getElementById('c-event').value;
   var date = document.getElementById('c-date').value.trim();
   if (!name || !church || !email) { alert('Please fill in your name, church, and email.'); return; }
   if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
@@ -605,7 +604,7 @@ btns[0].addEventListener('click', function() {
       name: name, email: email,
       church: church, city: city,
       event_type: event_type, date_range: date,
-      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
+      botcheck: false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Request sent!</strong><br>Thank you, ' + name.split(' ')[0] + '. We\'ll follow up within 2-3 business days.');
     else { btn.textContent='Send Invitation Request'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
@@ -614,12 +613,13 @@ btns[0].addEventListener('click', function() {
   });
 });
 // Coaching request form
-btns[1].addEventListener('click', function() {
+document.getElementById('btn-coaching').addEventListener('click', function() {
   var btn = this;
   var name = document.getElementById('p-name').value.trim();
   var email = document.getElementById('p-email').value.trim();
-  var hear = document.getElementById('p-hear') ? document.getElementById('p-hear').value.trim() : '';
-  var note = document.getElementById('p-note') ? document.getElementById('p-note').value.trim() : '';
+  var format = document.getElementById('p-format').value;
+  var hear = document.getElementById('p-hear').value.trim();
+  var note = document.getElementById('p-note').value.trim();
   if (!name || !email) { alert('Please enter your name and email.'); return; }
   if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
   btn.textContent = 'Sending...'; btn.disabled = true;
@@ -629,8 +629,8 @@ btns[1].addEventListener('click', function() {
       access_key: 'a4b05129-373e-4f40-a38e-bf7459378109',
       subject: 'Coaching Request — Enspire Global',
       name: name, email: email,
-      how_heard: hear, note: note,
-      botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
+      preferred_format: format, how_heard: hear, note: note,
+      botcheck: false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Request received!</strong><br>Thank you for reaching out. We\'ll be in touch soon.');
     else { btn.textContent='Request Coaching'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
