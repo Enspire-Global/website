@@ -126,7 +126,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .story-acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
 
 /* WHAT WE DO */
-.wwd{padding:96px 24px;background:var(--white)}
+.wwd{padding:96px 24px 32px;background:var(--white)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:var(--max-w);margin:0 auto}
 .svc{border:1.5px solid rgba(14,139,196,.12);border-radius:10px;padding:32px 26px;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
 .svc:hover{border-color:var(--blue);box-shadow:0 6px 24px rgba(14,139,196,.1);transform:translateY(-2px)}
@@ -156,6 +156,14 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .partner-card{background:var(--off-white);border-radius:10px;padding:24px 32px;display:flex;align-items:center;justify-content:center;width:calc(33.333% - 12px);min-height:100px;box-sizing:border-box}
 @media(max-width:700px){.partner-card{width:calc(50% - 10px);padding:18px 20px}}
 @media(max-width:440px){.partner-card{width:100%}}
+.photo-strip{padding:0;background:var(--dark-navy);border-bottom:4px solid var(--green)}
+.photo-strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.photo-strip-item{position:relative;overflow:hidden;aspect-ratio:3/2}
+.photo-strip-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.photo-strip-item:hover img{transform:scale(1.04)}
+.photo-strip-caption{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,43,60,.82) 0%,rgba(26,43,60,.1) 55%,transparent 100%);display:flex;align-items:flex-end;justify-content:center;padding:22px 20px}
+.photo-strip-caption span{color:var(--white);font-size:15px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.2;text-align:center}
+@media(max-width:640px){.photo-strip-grid{grid-template-columns:1fr}.photo-strip-item{aspect-ratio:4/3}}
 .testimonials{padding:88px 24px;background:var(--off-white)}
 .testimonials-in{max-width:var(--max-w);margin:0 auto}
 .testimonials-in .eyebrow{margin-bottom:12px;display:block;text-align:center}
@@ -463,6 +471,24 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   </div>
   <div style="text-align:center;margin-top:48px">
    <a href="what-we-do.html" class="btn btn-outline-blue">See Everything We Do</a>
+  </div>
+ </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<section class="photo-strip" aria-label="Ministry in action">
+ <div class="photo-strip-grid">
+  <div class="photo-strip-item">
+   <img src="images/photos/action-marriage-event.jpg" alt="Couples at a marriage event" loading="lazy">
+   <div class="photo-strip-caption"><span>Marriage Events</span></div>
+  </div>
+  <div class="photo-strip-item">
+   <img src="images/photos/action-elevate.jpg" alt="Men praying together at an Elevate retreat" loading="lazy">
+   <div class="photo-strip-caption"><span>Elevate Men's Ministry</span></div>
+  </div>
+  <div class="photo-strip-item">
+   <img src="images/photos/action-missions.jpg" alt="Enspire Global team on the mission field" loading="lazy">
+   <div class="photo-strip-caption"><span>International Missions</span></div>
   </div>
  </div>
 </section>
