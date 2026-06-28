@@ -167,6 +167,18 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .svc-section.blindspot .svc-inner{position:relative;z-index:2}
 .svc-section.elevate .svc-inner{position:relative;z-index:2}
 
+/* PASTOR TESTIMONIAL */
+.pastor-testimonial{padding:80px 24px;background:var(--white)}
+.pastor-testimonial-inner{max-width:780px;margin:0 auto;text-align:center}
+.pastor-quote{font-family:var(--font-d);font-size:clamp(1.1rem,2.2vw,1.35rem);font-style:italic;color:var(--dark);line-height:1.75;margin-bottom:36px;position:relative}
+.pastor-quote::before{content:'\201C';font-size:4rem;color:var(--green);line-height:0;vertical-align:-1rem;margin-right:4px;font-style:normal}
+.pastor-quote::after{content:'\201D';font-size:4rem;color:var(--green);line-height:0;vertical-align:-1rem;margin-left:4px;font-style:normal}
+.pastor-attribution{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.pastor-logo{max-height:110px;max-width:260px;width:auto;object-fit:contain;mix-blend-mode:multiply}
+.pastor-name{text-align:left}
+.pastor-name strong{display:block;font-size:15px;font-weight:600;color:var(--dark)}
+.pastor-name span{font-size:13px;color:var(--gray)}
+
 /* FORMS SECTION */
 .forms-section{padding:96px 24px;background:var(--off-white)}
 .forms-header{text-align:center;max-width:580px;margin:0 auto 64px}
@@ -530,6 +542,19 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 </section>
 
 <!-- CLOSING CTA -->
+<section class="pastor-testimonial" aria-label="Pastor testimonial">
+ <div class="pastor-testimonial-inner">
+  <p class="pastor-quote">We have known Billy and Rebecca for many years — we were their pastors when they were still newlyweds. We have watched them grow into their purpose and calling, and they are making a dynamic impact in families through Enspire Global. They have a vision, mission, and passion to impact the greatest foundational unit on the planet: the family. They are boots on the ground in fulfilling that mission.</p>
+  <div class="pastor-attribution">
+   <img src="images/logos/partner-northview.png" alt="Northview Harvest Ministries" class="pastor-logo">
+   <div class="pastor-name">
+    <strong>Pastor Tim Hodge</strong>
+    <span>Northview Harvest Ministries</span>
+   </div>
+  </div>
+ </div>
+</section>
+
 <section class="wwd-cta" aria-labelledby="wwd-cta-h">
  <div class="wwd-cta-inner">
   <span class="eyebrow">Partner With Us</span>
