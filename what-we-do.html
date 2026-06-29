@@ -407,7 +407,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 <section class="svc-section" id="womens" aria-labelledby="wd-h">
  <div class="svc-inner reverse">
   <div class="svc-img">
-   <img src="images/photos/04-WOMEN'S-DISCIPLESHIP.jpg" alt="Women's discipleship gathering" style="width:100%;border-radius:10px;display:block;object-fit:cover;height:420px;">
+   <img src="images/photos/04-WOMENS-DISCIPLESHIP.jpg" alt="Women's discipleship gathering" style="width:100%;border-radius:10px;display:block;object-fit:cover;height:420px;">
    <div class="svc-badge" style="left:-20px;right:auto;background:var(--orange);box-shadow:0 8px 24px rgba(253,141,4,.3)">
     <span class="svc-badge-num">04</span>
     <span class="svc-badge-label">Women's<br>Discipleship</span>
@@ -616,7 +616,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 </footer>
 
 <script>
-document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('mn').classList.remove('open');document.querySelector('.nav-burger').setAttribute('aria-expanded','false');}));
 </script>
 <script>
 

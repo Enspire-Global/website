@@ -156,7 +156,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .partner-card{background:var(--off-white);border-radius:10px;padding:24px 32px;display:flex;align-items:center;justify-content:center;width:calc(33.333% - 12px);min-height:100px;box-sizing:border-box}
 @media(max-width:700px){.partner-card{width:calc(50% - 10px);padding:18px 20px}}
 @media(max-width:440px){.partner-card{width:100%}}
-.photo-strip{padding:0;background:var(--dark-navy);border-bottom:4px solid var(--green)}
+.photo-strip{padding:0;background:var(--dark);border-bottom:4px solid var(--green)}
 .photo-strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .photo-strip-item{position:relative;overflow:hidden;aspect-ratio:3/2}
 .photo-strip-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
@@ -423,7 +423,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <p>What began in a season of loss and surrender became a calling. Today, Billy and Rebecca pour into couples, men, women, and families — bringing practical tools, personal coaching, and the hope of the gospel to those who need it most.</p>
    <div class="story-acts">
     <a href="about.html" class="btn btn-primary">Read Our Full Story</a>
-    <a href="contact.html" class="btn btn-outline-blue">Get in Touch</a>
+    <a href="contact.html" class="btn btn-outline-blue">Contact Us</a>
    </div>
   </div>
  </div>
@@ -695,7 +695,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 </footer>
 
 <script>
-document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('mn').classList.remove('open');document.querySelector('.nav-burger').setAttribute('aria-expanded','false');}));
 </script>
 <script>
 

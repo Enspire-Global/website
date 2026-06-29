@@ -291,7 +291,7 @@ ul li{margin-bottom:6px}
 </footer>
 
 <script>
-document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('mn').classList.remove('open');document.querySelector('.nav-burger').setAttribute('aria-expanded','false');}));
 </script>
 <script>
 (function(){

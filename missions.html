@@ -584,7 +584,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <div class="cta-box">
     <h3>Invite Enspire Global Internationally</h3>
     <p>Do you lead a ministry or organization doing kingdom work around the world? We would love to come alongside you — to speak, to serve, or to tell your story through Blindspot Media.</p>
-    <a href="contact.html" class="btn btn-primary" style="font-size:14px;padding:11px 22px">Get in Touch</a>
+    <a href="contact.html" class="btn btn-primary" style="font-size:14px;padding:11px 22px">Contact Us</a>
    </div>
    <div class="cta-box">
     <h3>Pray for the Work</h3>
@@ -641,7 +641,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 </footer>
 
 <script>
-document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('mn').classList.remove('open');document.querySelector('.nav-burger').setAttribute('aria-expanded','false');}));
 </script>
 <script>
 (function(){

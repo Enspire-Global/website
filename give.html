@@ -812,7 +812,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     </div>
     <h4>Tell Someone About Us</h4>
     <p>Know a couple who could use coaching? A church that needs a marriage event? A ministry that needs video work? Connect them with Enspire Global.</p>
-    <a href="contact.html" class="btn btn-outline-blue" style="font-size:14px;padding:10px 20px;margin-top:16px;display:inline-block">Get in Touch</a>
+    <a href="contact.html" class="btn btn-outline-blue" style="font-size:14px;padding:10px 20px;margin-top:16px;display:inline-block">Contact Us</a>
    </div>
    <div class="ow-card">
     <div class="ow-icon" style="background:rgba(253,141,4,.1)">
@@ -888,7 +888,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 </footer>
 
 <script>
-document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>document.getElementById('mn').classList.remove('open')));
+document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()=>{document.getElementById('mn').classList.remove('open');document.querySelector('.nav-burger').setAttribute('aria-expanded','false');}));
 
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(function(btn){
