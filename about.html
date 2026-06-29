@@ -18,9 +18,11 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="canonical" href="https://enspireglobal.org/about.html">
+<link rel="preload" as="image" href="images/photos/about-hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
 :root{
  --blue:#0E8BC4;--blue-dark:#0a6fa0;--blue-light:#e8f4fb;
@@ -90,7 +92,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
  position:absolute;inset:0;
  background:
   linear-gradient(105deg,rgba(10,111,160,.92) 0%,rgba(14,139,196,.78) 45%,rgba(26,43,60,.6) 100%),
-  url('images/photos/about-hero.jpg') center 20%/cover no-repeat;
+  url('images/photos/about-hero.webp') center 20%/cover no-repeat;
  background-attachment:scroll,scroll;
 }
 .page-hero-bg::after{
@@ -138,7 +140,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .origin-img-frame{
  width:100%;height:520px;
  border-radius:10px;
- background:url('images/photos/billy-rebecca-profile.jpg') center 30%/cover no-repeat;
+ background:url('images/photos/billy-rebecca-profile.webp') center 30%/cover no-repeat;
 }
 .origin-badge{
  position:absolute;
@@ -225,7 +227,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .fstat-label{font-size:13px;color:var(--gray);margin-top:4px;font-weight:500}
 .family-img-frame{
  width:100%;height:520px;border-radius:10px;
- background:url('images/photos/altmans.jpg') center 25%/cover no-repeat;
+ background:url('images/photos/altmans.webp') center 25%/cover no-repeat;
 }
 .ministry-bg{padding:88px 24px;background:var(--off-white)}
 .ministry-bg-inner{max-width:var(--max-w);margin:0 auto}
@@ -288,7 +290,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 
 /* CLOSING CTA */
 .about-cta{padding:96px 24px;background:var(--dark);position:relative;overflow:hidden}
-.about-cta-bg{position:absolute;inset:0;background:url('images/photos/bg-about-cta.jpg') center 45%/cover no-repeat;opacity:.07}
+.about-cta-bg{position:absolute;inset:0;background:url('images/photos/bg-about-cta.webp') center 45%/cover no-repeat;opacity:.07}
 .about-cta-inner{position:relative;z-index:2;max-width:680px;margin:0 auto;text-align:center}
 .about-cta .eyebrow{color:var(--green);margin-bottom:14px}
 .about-cta h2{color:var(--white);margin-bottom:18px}
@@ -301,7 +303,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.07)}
 .fbrand img{height:38px;width:auto;display:block;margin-bottom:18px}
 .fbrand p{color:rgba(255,255,255,.5);font-size:14.5px;line-height:1.7;margin-bottom:22px;max-width:260px}
-.footer-col h4{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px}
+.footer-col h4{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:18px}
 .footer-col ul{list-style:none}
 .footer-col ul li{margin-bottom:9px}
 .footer-col ul li a{color:rgba(255,255,255,.6);font-size:14px;transition:color .2s ease}
@@ -311,7 +313,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .fcontact a:hover{color:var(--white)}
 .flegal{font-size:12px;color:rgba(255,255,255,.28);margin-top:12px;line-height:1.5}
 .footer-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-btm p,.footer-btm a{color:rgba(255,255,255,.3);font-size:13px}
+.footer-btm p,.footer-btm a{color:rgba(255,255,255,.55);font-size:13px}
 .footer-btm a:hover{color:rgba(255,255,255,.65)}
 
 /* RESPONSIVE */
@@ -500,7 +502,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   </div>
   <div class="meet-grid">
    <div class="meet-card">
-    <img src="images/photos/billy-headshot.jpg" loading="lazy" width="800" height="800" alt="Billy Altman — Co-Founder of Enspire Global" class="meet-card-img billy">
+    <picture><source srcset="images/photos/billy-headshot.webp" type="image/webp"><img src="images/photos/billy-headshot.jpg" loading="lazy" width="800" height="800" alt="Billy Altman — Co-Founder of Enspire Global" class="meet-card-img billy"></picture>
     <div class="meet-card-body">
      <span class="meet-card-role">Co-Founder &amp; Director</span>
      <h3>Billy Altman</h3>
@@ -521,7 +523,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     </div>
    </div>
    <div class="meet-card">
-    <img src="images/photos/rebecca-headshot.jpg" loading="lazy" width="800" height="800" alt="Rebecca Altman — Co-Founder of Enspire Global" class="meet-card-img rebecca">
+    <picture><source srcset="images/photos/rebecca-headshot.webp" type="image/webp"><img src="images/photos/rebecca-headshot.jpg" loading="lazy" width="800" height="800" alt="Rebecca Altman — Co-Founder of Enspire Global" class="meet-card-img rebecca"></picture>
     <div class="meet-card-body">
      <span class="meet-card-role">Co-Founder &amp; Director</span>
      <h3>Rebecca Altman</h3>

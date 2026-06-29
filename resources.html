@@ -18,9 +18,11 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="canonical" href="https://enspireglobal.org/resources.html">
+<link rel="preload" as="image" href="images/photos/hero-resources.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 <style>
 :root{
  --blue:#0E8BC4;--blue-dark:#0a6fa0;--blue-light:#e8f4fb;
@@ -83,7 +85,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .page-hero{
  margin-top:76px;
  background:linear-gradient(105deg,rgba(10,111,160,.95) 0%,rgba(14,139,196,.85) 50%,rgba(26,43,60,.7) 100%),
-  url('images/photos/hero-resources.jpg') center 35%/cover no-repeat;
+  url('images/photos/hero-resources.webp') center 35%/cover no-repeat;
  padding:88px 24px;position:relative;
 }
 .page-hero::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
@@ -263,7 +265,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.07)}
 .fbrand img{height:38px;width:auto;display:block;margin-bottom:18px;background:transparent}
 .fbrand p{color:rgba(255,255,255,.5);font-size:14.5px;line-height:1.7;margin-bottom:22px;max-width:260px}
-.footer-col h4{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px}
+.footer-col h4{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:18px}
 .footer-col ul{list-style:none}
 .footer-col ul li{margin-bottom:9px}
 .footer-col ul li a{color:rgba(255,255,255,.6);font-size:14px;transition:color .2s ease}
@@ -273,7 +275,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .fcontact a:hover{color:var(--white)}
 .flegal{font-size:12px;color:rgba(255,255,255,.28);margin-top:12px;line-height:1.5}
 .footer-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-btm p,.footer-btm a{color:rgba(255,255,255,.3);font-size:13px}
+.footer-btm p,.footer-btm a{color:rgba(255,255,255,.55);font-size:13px}
 .footer-btm a:hover{color:rgba(255,255,255,.65)}
 
 /* RESPONSIVE */
@@ -369,7 +371,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <!-- RESOURCE 1: Ask Courageous Questions -->
    <div class="res-card">
     <div class="res-card-preview">
-     <img src="images/photos/ask-courageous-preview.jpg" loading="lazy" width="600" height="776" alt="Ask Courageous Questions — Preview">
+     <picture><source srcset="images/photos/ask-courageous-preview.webp" type="image/webp"><img src="images/photos/ask-courageous-preview.jpg" loading="lazy" width="600" height="776" alt="Ask Courageous Questions — Preview"></picture>
      <span class="res-card-badge">For Husbands</span>
     </div>
     <div class="res-card-body">
@@ -394,7 +396,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
    <!-- RESOURCE 2: Daily Temperature Reading Bundle -->
    <div class="res-card">
     <div class="res-card-preview">
-     <img src="images/photos/dtr-preview.jpg" loading="lazy" width="600" height="805" alt="Daily Temperature Reading — Preview">
+     <picture><source srcset="images/photos/dtr-preview.webp" type="image/webp"><img src="images/photos/dtr-preview.jpg" loading="lazy" width="600" height="805" alt="Daily Temperature Reading — Preview"></picture>
      <span class="res-card-badge green">For Couples • Bundle</span>
     </div>
     <div class="res-card-body">
