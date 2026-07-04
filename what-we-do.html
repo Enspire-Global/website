@@ -14,6 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What We Do — Enspire Global">
 <meta name="twitter:description" content="Enspire Global offers marriage coaching, marriage events, men's discipleship through Elevate, women's discipleship, Blindspot Media, and international missions.">
+<meta name="twitter:image" content="https://enspireglobal.org/images/og-image.jpg">
 <meta name="description" content="Looking for Christian marriage coaching, a marriage speaker for your church, or men's and women's discipleship? See everything Enspire Global offers — and find your next step.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
@@ -23,64 +24,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="site.css">
 <style>
-:root{
- --blue:#0E8BC4;--blue-dark:#0a6fa0;--blue-light:#e8f4fb;
- --green:#ABCE30;--green-dark:#8aaa20;
- --orange:#FD8D04;--orange-dark:#d97503;
- --dark:#1A2B3C;--gray:#6B7A8D;--gray-light:#f0f4f8;
- --off-white:#F7F9FA;--white:#ffffff;
- --font-d:'Playfair Display',Georgia,serif;
- --font-b:'Inter',system-ui,sans-serif;
- --max-w:1160px;--r:6px;--t:0.2s ease;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-b);font-size:17px;line-height:1.7;color:var(--dark);background:var(--white);-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
-.eyebrow{font-family:var(--font-b);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-dark);display:block}
-h1{font-family:var(--font-d);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1.15}
-h2{font-family:var(--font-d);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:600;line-height:1.25}
-h3{font-family:var(--font-d);font-size:clamp(1.1rem,2vw,1.4rem);font-weight:600;line-height:1.3}
-p{margin-bottom:1rem}p:last-child{margin-bottom:0}
-
-/* BUTTONS */
-.btn{display:inline-block;font-family:var(--font-b);font-size:15px;font-weight:600;letter-spacing:.03em;padding:14px 28px;border-radius:var(--r);cursor:pointer;transition:background var(--t),transform var(--t),box-shadow var(--t);text-align:center;border:none;line-height:1}
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--blue);color:var(--white)}
-.btn-primary:hover{background:var(--blue-dark);box-shadow:0 4px 16px rgba(14,139,196,.3)}
-.btn-give{background:var(--orange);color:var(--white)}
-.btn-give:hover{background:var(--orange-dark);box-shadow:0 4px 16px rgba(253,141,4,.3)}
-.btn-outline-blue{background:transparent;color:var(--blue);border:2px solid var(--blue)}
-.btn-outline-blue:hover{background:var(--blue-light)}
-.btn-outline{background:transparent;color:var(--white);border:2px solid var(--white)}
-.btn-outline:hover{background:rgba(255,255,255,.12)}
-.btn-green{background:var(--green);color:var(--dark)}
-.btn-green:hover{background:var(--green-dark);color:var(--white)}
-
-/* NAV */
-.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(14,139,196,.1);box-shadow:0 2px 12px rgba(26,43,60,.06)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;max-width:var(--max-w);margin:0 auto;padding:0 24px}
-.nav-logo img{height:44px;width:auto;display:block;background:transparent}
-.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
-.nav-links a{font-size:14.5px;font-weight:500;color:var(--dark);transition:color var(--t);position:relative;padding-bottom:2px}
-.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transition:transform var(--t);transform-origin:left}
-.nav-links a:hover{color:var(--blue)}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-links a.active{color:var(--blue)}
-.nav-links a.active::after{transform:scaleX(1)}
-.nav-cta{margin-left:8px;padding:11px 20px;font-size:14px}
-.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
-.nav-burger span{display:block;width:24px;height:2px;background:var(--dark);border-radius:2px}
-.mob-nav{display:none;position:fixed;top:76px;left:0;right:0;background:var(--white);border-top:1px solid rgba(14,139,196,.1);padding:20px 24px 28px;z-index:99;box-shadow:0 8px 24px rgba(26,43,60,.1)}
-.mob-nav.open{display:block}
-.mob-nav ul{list-style:none}
-.mob-nav ul li{border-bottom:1px solid var(--gray-light)}
-.mob-nav ul li a{display:block;padding:13px 0;font-size:16px;font-weight:500;color:var(--dark)}
-.mob-cta{margin-top:20px;display:flex;flex-direction:column;gap:12px}
-
 /* PAGE HERO */
 .page-hero{
  margin-top:76px;
@@ -213,25 +158,6 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 .wwd-cta p{color:rgba(255,255,255,.8);font-size:17px;line-height:1.7}
 .wwd-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
 
-/* FOOTER */
-.footer{background:var(--dark);padding:68px 24px 32px}
-.footer-in{max-width:var(--max-w);margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.07)}
-.fbrand img{height:38px;width:auto;display:block;margin-bottom:18px;background:transparent}
-.fbrand p{color:rgba(255,255,255,.5);font-size:14.5px;line-height:1.7;margin-bottom:22px;max-width:260px}
-.footer-col h4{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:18px}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:9px}
-.footer-col ul li a{color:rgba(255,255,255,.6);font-size:14px;transition:color .2s ease}
-.footer-col ul li a:hover{color:var(--white)}
-.fcontact p{color:rgba(255,255,255,.5);font-size:14px;margin-bottom:7px}
-.fcontact a{color:rgba(255,255,255,.7);transition:color .2s ease}
-.fcontact a:hover{color:var(--white)}
-.flegal{font-size:12px;color:rgba(255,255,255,.28);margin-top:12px;line-height:1.5}
-.footer-btm{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-btm p,.footer-btm a{color:rgba(255,255,255,.55);font-size:13px}
-.footer-btm a:hover{color:rgba(255,255,255,.65)}
-
 /* MOBILE QUICK-NAV */
 .mob-quicknav{display:none;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;padding:14px 24px;background:var(--white);border-bottom:1px solid rgba(14,139,196,.1);position:sticky;top:76px;z-index:50}
 .mob-quicknav a{display:inline-block;font-size:13px;font-weight:600;color:var(--gray);padding:7px 14px;border-radius:100px;border:1.5px solid rgba(26,43,60,.12);margin-right:8px;transition:background .2s,color .2s,border-color .2s;text-decoration:none;white-space:nowrap}
@@ -242,35 +168,39 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 @media(max-width:1024px){
  .svc-inner{gap:48px}
  .forms-grid{grid-template-columns:1fr}
- .footer-top{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media(max-width:768px){
- .nav-links,.nav-cta{display:none}
- .nav-burger{display:flex}
  .svc-inner{grid-template-columns:1fr;gap:40px}
  .svc-inner.reverse{direction:ltr}
  .svc-badge{right:0;bottom:-14px}
- .footer-top{grid-template-columns:1fr;gap:32px}
- .footer-btm{flex-direction:column;text-align:center}
  .form-card{padding:32px 24px}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /* === PARALLAX + SCROLL ANIMATIONS === */
 @media(min-width:769px){
  .svc-section.elevate::before,.svc-section.blindspot::before{background-attachment:fixed}
 }
-.anim{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
-.anim.in{opacity:1;transform:translateY(0)}
 .ctag{background:var(--off-white);border:1px solid rgba(14,139,196,.15);color:var(--dark);padding:5px 13px;border-radius:100px;font-size:13px;font-weight:500;display:inline-block}
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}.skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:12px 20px;background:var(--blue);color:var(--white);font-size:14px;font-weight:600;z-index:10000;border-radius:0 0 6px 0;text-decoration:none}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "What We Do — Enspire Global",
+  "url": "https://enspireglobal.org/what-we-do.html",
+  "description": "Enspire Global equips marriages, trains church leaders, and partners with Blindspot Media to serve communities worldwide.",
+  "about": [
+    {"@type": "Service", "name": "Marriage Coaching", "provider": {"@type": "Organization", "name": "Enspire Global"}},
+    {"@type": "Service", "name": "Church Leadership Training", "provider": {"@type": "Organization", "name": "Enspire Global"}}
+  ]
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- NAV -->
-<nav class="site-nav" role="navigation" aria-label="Main navigation">
+<nav class="site-nav" aria-label="Main navigation">
  <div class="nav-inner">
   <a href="index.html" class="nav-logo" aria-label="Enspire Global Home">
    <img src="images/logos/enspire-global-color.png" alt="Enspire Global">
@@ -306,8 +236,9 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
   </div>
 </div>
 
+<main id="main-content">
 <!-- PAGE HERO -->
-<section class="page-hero" id="main-content" aria-label="What We Do hero">
+<section class="page-hero" aria-label="What We Do hero">
  <div class="page-hero-inner">
   <p class="eyebrow">How We Serve</p>
   <h1>Real help for real relationships.</h1>
@@ -515,6 +446,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
      </select>
     </div>
     <div class="ff"><label for="c-date">Preferred Date Range</label><input type="text" id="c-date" placeholder="e.g. Spring 2025, flexible"></div>
+    <p id="church-err" style="display:none;color:#c0392b;font-size:14px;margin-bottom:10px;" role="alert"></p>
     <button type="button" id="btn-church" class="btn btn-primary form-submit">Send Invitation Request</button>
     <p class="form-privacy">We'll be in touch soon.</p>
    </div>
@@ -538,6 +470,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
     </div>
     <div class="ff"><label for="p-hear">How did you hear about us?</label><input type="text" id="p-hear" placeholder="Friend, church, social media..."></div>
     <div class="ff"><label for="p-note">Tell us a little about what you're looking for</label><textarea id="p-note" placeholder="A brief note about where you are and what brought you here..."></textarea></div>
+    <p id="coaching-err" style="display:none;color:#c0392b;font-size:14px;margin-bottom:10px;" role="alert"></p>
     <button type="button" id="btn-coaching" class="btn btn-give form-submit">Request Coaching</button>
     <p class="form-privacy">All conversations are kept in confidence.</p>
    </div>
@@ -573,6 +506,7 @@ p{margin-bottom:1rem}p:last-child{margin-bottom:0}
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer class="footer" aria-label="Site footer">
  <div class="footer-in">
   <div class="footer-top">
@@ -638,8 +572,10 @@ document.getElementById('btn-church').addEventListener('click', function() {
   var email = document.getElementById('c-email').value.trim();
   var event_type = document.getElementById('c-event').value;
   var date = document.getElementById('c-date').value.trim();
-  if (!name || !church || !email) { alert('Please fill in your name, church, and email.'); return; }
-  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  var churchErr = document.getElementById('church-err');
+  churchErr.style.display = 'none'; churchErr.textContent = '';
+  if (!name || !church || !email) { churchErr.textContent = 'Please fill in your name, church, and email.'; churchErr.style.display = 'block'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { churchErr.textContent = 'Please enter a valid email address.'; churchErr.style.display = 'block'; return; }
   btn.textContent = 'Sending...'; btn.disabled = true;
   fetch('https://api.web3forms.com/submit', {
     method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -652,9 +588,9 @@ document.getElementById('btn-church').addEventListener('click', function() {
       botcheck: false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Request sent!</strong><br>Thank you, ' + name.split(' ')[0] + '. We\'ll follow up within 2-3 business days.');
-    else { btn.textContent='Send Invitation Request'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
+    else { btn.textContent='Send Invitation Request'; btn.disabled=false; churchErr.textContent='Something went wrong. Please try again.'; churchErr.style.display='block'; }
   }).catch(function(){
-    btn.textContent='Send Invitation Request'; btn.disabled=false; alert('Something went wrong. Please try again.');
+    btn.textContent='Send Invitation Request'; btn.disabled=false; churchErr.textContent='Something went wrong. Please try again.'; churchErr.style.display='block';
   });
 });
 // Coaching request form
@@ -665,8 +601,10 @@ document.getElementById('btn-coaching').addEventListener('click', function() {
   var format = document.getElementById('p-format').value;
   var hear = document.getElementById('p-hear').value.trim();
   var note = document.getElementById('p-note').value.trim();
-  if (!name || !email) { alert('Please enter your name and email.'); return; }
-  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  var coachErr = document.getElementById('coaching-err');
+  coachErr.style.display = 'none'; coachErr.textContent = '';
+  if (!name || !email) { coachErr.textContent = 'Please enter your name and email.'; coachErr.style.display = 'block'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { coachErr.textContent = 'Please enter a valid email address.'; coachErr.style.display = 'block'; return; }
   btn.textContent = 'Sending...'; btn.disabled = true;
   fetch('https://api.web3forms.com/submit', {
     method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -678,9 +616,9 @@ document.getElementById('btn-coaching').addEventListener('click', function() {
       botcheck: false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>Request received!</strong><br>Thank you for reaching out. We\'ll be in touch soon.');
-    else { btn.textContent='Request Coaching'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
+    else { btn.textContent='Request Coaching'; btn.disabled=false; coachErr.textContent='Something went wrong. Please try again.'; coachErr.style.display='block'; }
   }).catch(function(){
-    btn.textContent='Request Coaching'; btn.disabled=false; alert('Something went wrong. Please try again.');
+    btn.textContent='Request Coaching'; btn.disabled=false; coachErr.textContent='Something went wrong. Please try again.'; coachErr.style.display='block';
   });
 });
 
