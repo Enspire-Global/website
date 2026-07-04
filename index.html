@@ -552,8 +552,9 @@
    </div>
    <div class="ff">
     <label for="em">Email Address</label>
-    <input type="email" id="em" name="em" placeholder="you@example.com" autocomplete="email">
+    <input type="email" id="em" name="em" placeholder="you@example.com" autocomplete="email" required>
    </div>
+   <p id="idx-err" style="display:none;color:#c0392b;font-size:14px;margin-bottom:10px;" role="alert"></p>
    <button type="button" class="btn btn-primary fsub">Sign Me Up</button>
    <p class="fpriv">We respect your privacy. No spam — ever. Unsubscribe anytime.</p>
   </div>
@@ -619,7 +620,9 @@ document.querySelector('.fsub').addEventListener('click', function() {
   var fname = document.getElementById('fn') ? document.getElementById('fn').value.trim() : '';
   var lname = document.getElementById('ln') ? document.getElementById('ln').value.trim() : '';
   var email = document.getElementById('em') ? document.getElementById('em').value.trim() : '';
-  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  var errEl = document.getElementById('idx-err');
+  errEl.style.display='none'; errEl.textContent='';
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent='Please enter a valid email address.'; errEl.style.display='block'; return; }
   btn.textContent = 'Signing up...'; btn.disabled = true;
   fetch('https://api.web3forms.com/submit', {
     method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -637,9 +640,9 @@ document.querySelector('.fsub').addEventListener('click', function() {
       d.innerHTML = '<strong>You\'re signed up!</strong><br>Thank you. Watch for your first update from us in the next few weeks — stories from the field, prayer requests, and ways to pray along with us.';
       btn.parentNode.appendChild(d);
     }
-    else { btn.textContent='Sign Me Up'; btn.disabled=false; alert("Something went wrong. Please try again."); }
+    else { btn.textContent='Sign Me Up'; btn.disabled=false; errEl.textContent='Something went wrong. Please try again.'; errEl.style.display='block'; }
   }).catch(function(){
-    btn.textContent='Sign Me Up'; btn.disabled=false; alert("Something went wrong. Please try again.");
+    btn.textContent='Sign Me Up'; btn.disabled=false; errEl.textContent='Something went wrong. Please try again.'; errEl.style.display='block';
   });
 });
 

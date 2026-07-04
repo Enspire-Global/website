@@ -34,7 +34,7 @@
  padding:88px 24px;position:relative;
 }
 .page-hero::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
-.page-hero-inner{max-width:var(--max-w);margin:0 auto;max-width:620px}
+.page-hero-inner{margin:0 auto;max-width:620px}
 .page-hero .eyebrow{color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .page-hero .eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green);flex-shrink:0}
 .page-hero h1{color:var(--white);margin-bottom:18px}
@@ -227,7 +227,7 @@
    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
    <div class="ff">
     <label for="s-fname">First Name</label>
-    <input type="text" id="s-fname" placeholder="Your first name" autocomplete="given-name">
+    <input type="text" id="s-fname" placeholder="Your first name" autocomplete="given-name" required>
    </div>
    <div class="ff">
     <label for="s-lname">Last Name</label>
@@ -235,8 +235,9 @@
    </div>
    <div class="ff">
     <label for="s-email">Email Address</label>
-    <input type="email" id="s-email" placeholder="you@example.com" autocomplete="email">
+    <input type="email" id="s-email" placeholder="you@example.com" autocomplete="email" required>
    </div>
+   <p id="signup-err" style="display:none;color:#c0392b;font-size:14px;margin-bottom:10px;" role="alert"></p>
    <button type="button" class="btn btn-primary form-submit">Sign Me Up</button>
    <p class="form-privacy">We respect your privacy. No spam — ever. Unsubscribe anytime.</p>
   </div>
@@ -431,8 +432,10 @@ document.querySelector('.form-submit').addEventListener('click', function() {
   var fname = document.getElementById('s-fname').value.trim();
   var lname = document.getElementById('s-lname').value.trim();
   var email = document.getElementById('s-email').value.trim();
-  if (!fname || !email) { alert('Please enter your name and email.'); return; }
-  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  var errEl = document.getElementById('signup-err');
+  errEl.style.display='none'; errEl.textContent='';
+  if (!fname || !email) { errEl.textContent='Please enter your name and email.'; errEl.style.display='block'; return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent='Please enter a valid email address.'; errEl.style.display='block'; return; }
   btn.textContent = 'Signing up...'; btn.disabled = true;
   fetch('https://api.web3forms.com/submit', {
     method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -444,9 +447,9 @@ document.querySelector('.form-submit').addEventListener('click', function() {
       botcheck: document.querySelector('[name="botcheck"]') ? document.querySelector('[name="botcheck"]').checked : false})
   }).then(function(r){return r.json()}).then(function(j){
     if (j.success) showSuccess(btn, '<strong>You\'re signed up!</strong><br>Thank you, ' + fname + '. We\'ll be in touch with ministry updates.');
-    else { btn.textContent='Sign Me Up'; btn.disabled=false; alert('Something went wrong. Please try again.'); }
+    else { btn.textContent='Sign Me Up'; btn.disabled=false; errEl.textContent='Something went wrong. Please try again.'; errEl.style.display='block'; }
   }).catch(function(){
-    btn.textContent='Sign Me Up'; btn.disabled=false; alert('Something went wrong. Please try again.');
+    btn.textContent='Sign Me Up'; btn.disabled=false; errEl.textContent='Something went wrong. Please try again.'; errEl.style.display='block';
   });
 });
 

@@ -34,7 +34,7 @@
  padding:88px 24px;position:relative;
 }
 .page-hero::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
-.page-hero-inner{max-width:var(--max-w);margin:0 auto;max-width:600px}
+.page-hero-inner{margin:0 auto;max-width:600px}
 .page-hero .eyebrow{color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .page-hero .eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green);flex-shrink:0}
 .page-hero h1{color:var(--white);margin-bottom:18px}
@@ -233,7 +233,7 @@
     <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
    <div class="ff">
      <label for="c-fname">First Name</label>
-     <input type="text" id="c-fname" placeholder="First name" autocomplete="given-name">
+     <input type="text" id="c-fname" placeholder="First name" autocomplete="given-name" required>
     </div>
     <div class="ff">
      <label for="c-lname">Last Name</label>
@@ -242,11 +242,11 @@
    </div>
    <div class="ff">
     <label for="c-email">Email Address</label>
-    <input type="email" id="c-email" placeholder="you@example.com" autocomplete="email">
+    <input type="email" id="c-email" placeholder="you@example.com" autocomplete="email" required>
    </div>
    <div class="ff">
     <label for="c-subject">Reason for Reaching Out</label>
-    <select id="c-subject">
+    <select id="c-subject" required>
      <option value="" disabled selected>Select a reason</option>
      <option>Marriage Coaching Inquiry</option>
      <option>Invite Us to Speak / Marriage Event</option>
@@ -259,7 +259,7 @@
    </div>
    <div class="ff">
     <label for="c-msg">Your Message</label>
-    <textarea id="c-msg" placeholder="Tell us a little about what's on your heart or what you're looking for..."></textarea>
+    <textarea id="c-msg" placeholder="Tell us a little about what's on your heart or what you're looking for..." required></textarea>
    </div>
    <p id="contact-err" style="display:none;color:#c0392b;font-size:14px;margin-bottom:10px;" role="alert"></p>
    <button type="button" class="btn btn-primary form-submit">Send Message</button>

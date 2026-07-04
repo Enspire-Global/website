@@ -42,7 +42,7 @@ ul li{margin-bottom:6px}
   padding:72px 24px;position:relative;
 }
 .page-hero::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
-.page-hero-inner{max-width:var(--max-w);margin:0 auto;max-width:600px}
+.page-hero-inner{margin:0 auto;max-width:600px}
 .page-hero .eyebrow{color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .page-hero .eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green);flex-shrink:0}
 .page-hero h1{color:var(--white);margin-bottom:12px}
@@ -60,14 +60,6 @@ ul li{margin-bottom:6px}
 .policy-divider{
   border:none;border-top:1px solid rgba(14,139,196,.12);
   margin:36px 0;
-}
-
-@media(max-width:1024px){.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
-  .nav-burger{display:flex}
-  .footer-top{grid-template-columns:1fr;gap:32px}
-  .footer-btm{flex-direction:column;text-align:center}
 }
 
 /* === PARALLAX + SCROLL ANIMATIONS === */

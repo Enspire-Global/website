@@ -34,7 +34,7 @@
  padding:88px 24px;position:relative;
 }
 .page-hero::after{content:'';position:absolute;left:0;top:12%;bottom:12%;width:5px;background:var(--green);border-radius:0 3px 3px 0}
-.page-hero-inner{max-width:var(--max-w);margin:0 auto;max-width:600px}
+.page-hero-inner{margin:0 auto;max-width:600px}
 .page-hero .eyebrow{color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .page-hero .eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green);flex-shrink:0}
 .page-hero h1{color:var(--white);margin-bottom:18px}
@@ -315,7 +315,8 @@
       <input type="text" id="acq-name" placeholder="Your first name" autocomplete="given-name">
       <label class="form-label" for="acq-email">Email Address</label>
       <input type="email" id="acq-email" placeholder="you@example.com" autocomplete="email">
-      <a href="downloads/Ask_Courageous_Questions.pdf" download="Ask_Courageous_Questions.pdf" class="btn btn-primary download-btn" onclick="return validateForm('acq-name','acq-email')">
+      <p id="acq-err" style="display:none;color:#c0392b;font-size:13px;margin-bottom:8px;" role="alert"></p>
+      <a href="downloads/Ask_Courageous_Questions.pdf" download="Ask_Courageous_Questions.pdf" class="btn btn-primary download-btn" onclick="return validateForm('acq-name','acq-email','acq-err')">
        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
        Download Free
       </a>
@@ -340,12 +341,13 @@
       <input type="text" id="dtr-name" placeholder="Your first name" autocomplete="given-name">
       <label class="form-label" for="dtr-email">Email Address</label>
       <input type="email" id="dtr-email" placeholder="you@example.com" autocomplete="email">
+      <p id="dtr-err" style="display:none;color:#c0392b;font-size:13px;margin-bottom:8px;" role="alert"></p>
       <div style="display:flex;flex-direction:column;gap:8px;margin-top:2px">
-       <a href="downloads/Daily_Temperature_Reading.pdf" download class="btn btn-primary download-btn" onclick="return validateForm('dtr-name','dtr-email')">
+       <a href="downloads/Daily_Temperature_Reading.pdf" download class="btn btn-primary download-btn" onclick="return validateForm('dtr-name','dtr-email','dtr-err')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Overview
        </a>
-       <a href="downloads/Illuminate_DTR_Guide.pdf" download class="btn btn-outline-blue download-btn" onclick="return validateForm('dtr-name','dtr-email')">
+       <a href="downloads/Illuminate_DTR_Guide.pdf" download class="btn btn-outline-blue download-btn" onclick="return validateForm('dtr-name','dtr-email','dtr-err')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download Full Guide
        </a>
@@ -381,8 +383,9 @@
   <p>Sign up for Ministry Updates and be the first to know when new tools, guides, and resources are available from Enspire Global.</p>
   <div class="notify-form" id="notify-form">
    <input type="email" id="notify-email" placeholder="your@email.com" autocomplete="email" aria-label="Email address">
-   <button type="button" class="btn btn-green" onclick="submitNotify()">Notify Me</button>
+   <button type="button" class="btn btn-primary" onclick="submitNotify()">Notify Me</button>
   </div>
+  <p id="notify-err" style="display:none;color:#ffcccb;font-size:14px;margin-top:8px;" role="alert"></p>
   <p id="notify-msg" style="display:none;color:#fff;margin-top:16px;font-size:15px;opacity:.9"></p>
  </div>
 </section>
@@ -501,12 +504,17 @@ document.querySelectorAll('.mob-nav a').forEach(l=>l.addEventListener('click',()
 function submitNotify() {
  var email = document.getElementById('notify-email').value.trim();
  var msg = document.getElementById('notify-msg');
- if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+ var errEl = document.getElementById('notify-err');
+ errEl.style.display='none'; errEl.textContent='';
+ if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+   errEl.textContent='Please enter a valid email address.'; errEl.style.display='block'; return;
+ }
  fetch('https://api.web3forms.com/submit', {
   method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
   body: JSON.stringify({botcheck:false, access_key:'a4b05129-373e-4f40-a38e-bf7459378109', email:email, name:email, subject:'Resource Notify Me — Enspire Global'})
  }).then(function(){
   document.getElementById('notify-form').style.display='none';
+  errEl.style.display='none';
   msg.textContent = "You're on the list! We'll email you as soon as new resources are available.";
   msg.style.display='block';
  }).catch(function(){
@@ -515,11 +523,14 @@ function submitNotify() {
  });
 }
 
-function validateForm(nameId, emailId) {
+function validateForm(nameId, emailId, errId) {
  var name = document.getElementById(nameId).value.trim();
  var email = document.getElementById(emailId).value.trim();
- if (!name) { alert('Please enter your first name to download this resource.'); return false; }
- if (!email || !email.includes('@')) { alert('Please enter a valid email address to download this resource.'); return false; }
+ var errEl = errId ? document.getElementById(errId) : null;
+ if(errEl){errEl.style.display='none';errEl.textContent='';}
+ function showErr(msg){if(errEl){errEl.textContent=msg;errEl.style.display='block';}}
+ if (!name) { showErr('Please enter your first name to download this resource.'); return false; }
+ if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showErr('Please enter a valid email address to download this resource.'); return false; }
  fetch('https://api.web3forms.com/submit', {
    method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
    body: JSON.stringify({botcheck: false, access_key:'a4b05129-373e-4f40-a38e-bf7459378109', name: name, email: email, subject: 'Resource Download — Enspire Global'})
