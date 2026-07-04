@@ -658,8 +658,8 @@ document.querySelector('.fsub').addEventListener('click', function() {
  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
  els.forEach(function(el){io.observe(el)});
  // Image parallax for What We Do photos
- // Wraps only the <img> so the badge and rounded corners are preserved
- if(window.matchMedia('(min-width:769px)').matches){
+ var isDesktop=window.matchMedia('(min-width:769px)').matches;
+ if(isDesktop){
   var svcImgs=[].slice.call(document.querySelectorAll('.svc-img img'));
   if(svcImgs.length){
    svcImgs.forEach(function(img){
@@ -682,7 +682,7 @@ document.querySelector('.fsub').addEventListener('click', function() {
    tick();
   }
  }
- if(window.matchMedia('(min-width:769px)').matches){
+ if(isDesktop){
   var hBg=document.querySelector('.hero-bg');
   if(hBg){
    window.addEventListener('scroll',function(){

@@ -842,31 +842,6 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
  els.forEach(function(el){io.observe(el)});
- // Image parallax for What We Do photos
- // Wraps only the <img> so the badge and rounded corners are preserved
- if(window.matchMedia('(min-width:769px)').matches){
-  var svcImgs=[].slice.call(document.querySelectorAll('.svc-img img'));
-  if(svcImgs.length){
-   svcImgs.forEach(function(img){
-    var wrap=document.createElement('div');
-    wrap.style.cssText='overflow:hidden;border-radius:10px;';
-    img.style.borderRadius='0';
-    img.style.willChange='transform';
-    img.style.transform='scale(1.08)';
-    img.parentNode.insertBefore(wrap,img);
-    wrap.appendChild(img);
-   });
-   function tick(){
-    svcImgs.forEach(function(img){
-     var r=img.parentElement.getBoundingClientRect();
-     var off=((r.top+r.height/2)/window.innerHeight-0.5)*50;
-     img.style.transform='translateY('+off.toFixed(1)+'px) scale(1.08)';
-    });
-   }
-   window.addEventListener('scroll',tick,{passive:true});
-   tick();
-  }
- }
  if(window.matchMedia('(min-width:769px)').matches){
   var gBg=document.querySelector('.give-hero-bg');
   if(gBg){
