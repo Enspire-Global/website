@@ -78,23 +78,11 @@
 .pod-wordmark-top{
   font-family:'Inter',sans-serif;font-size:clamp(.85rem,2vw,1rem);
   font-weight:800;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(255,255,255,.65);margin-bottom:4px;
+  color:rgba(255,255,255,.65);margin-bottom:12px;
 }
-.pod-wordmark-main{
-  font-family:'Inter',sans-serif;
-  font-size:clamp(3.5rem,9vw,6.5rem);
-  font-weight:900;letter-spacing:-.02em;line-height:1;
-  color:var(--dark-nav, #1A2B3C);
-  -webkit-text-stroke:2px rgba(255,255,255,.9);
-  color:transparent;
-  display:flex;align-items:center;gap:.1em;
-}
-.pod-wordmark-main .man-letter{color:var(--white);-webkit-text-stroke:0}
-.pod-wordmark-main .man-dot{
-  display:inline-block;width:.18em;height:.18em;
-  background:var(--green);border-radius:2px;
-  vertical-align:middle;margin-bottom:.12em;
-  flex-shrink:0;
+.man-brandmark{
+  display:block;
+  max-width:480px;width:100%;height:auto;
 }
 
 .pod-tagline{
@@ -203,7 +191,7 @@
 @media(max-width:768px){
   .man-grid{grid-template-columns:1fr}
   .hosts-grid{grid-template-columns:1fr}
-  .pod-wordmark-main{font-size:clamp(3rem,15vw,5rem)}
+  .man-brandmark{max-width:320px}
 }
 </style>
 <script type="application/ld+json">
@@ -273,9 +261,7 @@
     <div class="pod-coming-badge">Coming October 2026</div>
     <div class="pod-wordmark">
       <div class="pod-wordmark-top">Good at Being a</div>
-      <div class="pod-wordmark-main" aria-label="M.A.N.">
-        <span class="man-letter">M</span><span class="man-dot" aria-hidden="true"></span><span class="man-letter">A</span><span class="man-dot" aria-hidden="true"></span><span class="man-letter">N</span><span class="man-dot" aria-hidden="true"></span>
-      </div>
+      <img src="images/photos/MAN-white.png" alt="M.A.N." class="man-brandmark">
     </div>
     <p class="pod-tagline">
       <strong>Don't be a good man.</strong><span class="divider-bar" aria-hidden="true"></span>Be good at being a M.A.N.
