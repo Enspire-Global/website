@@ -27,6 +27,7 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="canonical" href="https://enspireglobal.org/podcast">
+<link rel="preload" as="image" href="images/photos/hero-podcast.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -44,8 +45,8 @@
 }
 .pod-hero::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 50%,rgba(171,206,48,.08) 0%,transparent 65%),
-              radial-gradient(ellipse at 20% 80%,rgba(14,139,196,.12) 0%,transparent 55%);
+  background:linear-gradient(105deg,rgba(26,43,60,.92) 0%,rgba(26,43,60,.75) 50%,rgba(26,43,60,.6) 100%),
+              url('images/photos/hero-podcast.jpg') center 40%/cover no-repeat;
 }
 .pod-hero::after{
   content:'';position:absolute;left:0;top:12%;bottom:12%;
