@@ -1,4 +1,11 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/thanksgiving",
+      "destination": "/downloads/Thanksgiving_Table_Questions_Enspire.pdf",
+      "permanent": false
+    }
+  ]
 }
